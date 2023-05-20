@@ -4,7 +4,6 @@ using System.Collections;
 public class clickcontrol : MonoBehaviour {
 
 	public static string nameofobj;
-	public GameObject objnametext;
 	public Texture2D cursorTexture1;
 	public Texture2D cursorTexture2;
     public CursorMode cursorMode = CursorMode.Auto;
@@ -12,8 +11,11 @@ public class clickcontrol : MonoBehaviour {
  	private Color startcolor;
 	public int count = 0;
 
+	Dialogue dialogueScript;
+
 	// Use this for initialization
 	void Start () {
+		dialogueScript = GameObject.FindGameObjectWithTag("dialogue").GetComponent<Dialogue>();
 	}
 	
 	// Update is called once per frame
@@ -21,11 +23,16 @@ public class clickcontrol : MonoBehaviour {
 		
 	}
 
+	void OnDestroy() {
+    }
+
 	void OnMouseDown() {
 		nameofobj = gameObject.name;
 		Debug.Log (nameofobj);
+		if (nameofobj == "gem") {
+			dialogueScript.StartDialogue();
+		} 
 		Destroy (gameObject);
-		Destroy (objnametext);
 		Cursor.SetCursor(cursorTexture1, hotSpot, cursorMode);
 	}
 
@@ -41,5 +48,5 @@ public class clickcontrol : MonoBehaviour {
     	 GetComponent<Renderer>().material.color = startcolor;
 		 Cursor.SetCursor(cursorTexture1, hotSpot, cursorMode);
  	}
-
 }
+
