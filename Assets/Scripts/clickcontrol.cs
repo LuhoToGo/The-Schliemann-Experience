@@ -11,11 +11,10 @@ public class clickcontrol : MonoBehaviour {
  	private Color startcolor;
 	public int count = 0;
 
-	Dialogue dialogueScript;
+	public Dialogue dialogue;
 
 	// Use this for initialization
 	void Start () {
-		dialogueScript = GameObject.FindGameObjectWithTag("dialogue").GetComponent<Dialogue>();
 	}
 	
 	// Update is called once per frame
@@ -23,16 +22,15 @@ public class clickcontrol : MonoBehaviour {
 		
 	}
 
-	void OnDestroy() {
-    }
+	public void TriggerDialogue() {
+		FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+	}
 
 	void OnMouseDown() {
 		nameofobj = gameObject.name;
 		Debug.Log (nameofobj);
-		if (nameofobj == "gem") {
-			dialogueScript.StartDialogue();
-		} 
-		Destroy (gameObject);
+		TriggerDialogue();
+		gameObject.SetActive(false);
 		Cursor.SetCursor(cursorTexture1, hotSpot, cursorMode);
 	}
 
