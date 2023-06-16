@@ -30,13 +30,13 @@ public class QuestionDialogue : MonoBehaviour {
 
         Hide();
 
-        ShowQuestion("Do you want to do this?", () => {
-            Debug.Log("Option A");
-        },() => {
-            Debug.Log("Option B");
-        },() => {
-            Debug.Log("Option C");
-        });
+        //ShowQuestion("Do you want to do this?", () => { //das hier nur zu testzwecken, kann danach raus
+        //    Debug.Log("Option A");
+        //},() => {
+        //    Debug.Log("Option B");
+        //},() => {
+        //    Debug.Log("Option C");
+        //});                                                //bis hier
     }
 
     public void ShowQuestion(string questionText, Action actionA, Action actionB, Action actionC) {

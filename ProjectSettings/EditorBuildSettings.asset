@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 76a9aa79e79f0b947b5a544ae8cc0815
   - enabled: 1
-    path: Assets/Scenes/Troy.unity
+    path: Assets/Scenes/mycenae.unity
     guid: 57c4c0ac2763f044c99f21a962a7abb1
   m_configObjects: {}
