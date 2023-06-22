@@ -5,26 +5,22 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-
+    public static DialogueManager Instance { get; private set;}
     public TextMeshProUGUI dialogueText;
-    private Queue<string> sentences;
     public float textSpeed;
     public Animator animator;
+    private Queue<string> sentences;
 
-    // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue (Dialogue dialogue){
+
+    public void StartDialogue (Queue<string> dialogue){
         animator.SetBool("IsOpen", true);
-        
-        sentences.Clear();
-        
-        foreach (string sentence in dialogue.sentences){
-           sentences.Enqueue(sentence);
-        }
+
+        sentences = dialogue;
 
         DisplayNextSentence();
     }
@@ -51,6 +47,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue(){
         animator.SetBool("IsOpen", false);
         Debug.Log("End of Conversation");
+        FindObjectOfType<clickcontrol>().showQuestion();
     }
 
 }
