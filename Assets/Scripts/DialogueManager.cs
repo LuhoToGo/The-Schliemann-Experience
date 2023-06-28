@@ -71,7 +71,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", false);
         animatorAssistant.SetBool("IsOpen", false);
         Debug.Log("End of Conversation");
-        FindObjectOfType<clickcontrol>().showQuestion();
+        FindObjectOfType<clickcontrol>().postDialogue();
     }
 
 }
