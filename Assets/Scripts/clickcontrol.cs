@@ -12,19 +12,25 @@ public class clickcontrol : MonoBehaviour {
     public Vector2 hotSpot = Vector2.zero;
 	public Queue<string> dialogue;
  	private Color startcolor;
-	public int points = 0;
-	int counter = 0;
+	public static int counter = 0;
 
 
 	void Start () {
 		dialogue = new Queue<string>();
+	}
+
+	void Update() {
+		Debug.Log(counter);
 	}
 	
 	void OnMouseDown() {
 		nameofobj = gameObject.name;
 		Debug.Log (nameofobj);
 		TriggerDialogue();
-		gameObject.SetActive(false);
+		if (nameofobj != "SchliemannT"){
+			gameObject.SetActive(false);
+		}
+		
 		Cursor.SetCursor(cursorTexture1, hotSpot, cursorMode);
 	}
 
@@ -45,7 +51,7 @@ public class clickcontrol : MonoBehaviour {
 
 	//ab hier beginnt der Dialog --> auslagern in eigene Klasse? Macht es das wirklich besser?
 	public void TriggerDialogue() { //wird aufgerufen wenn gameObject angeklickt wurde
-		if (nameofobj == "SchliemannT"){
+		if (nameofobj == "SchliemannT" && counter == 0){
 			dialogue.Clear();
 			dialogue.Enqueue("Hello *name* It’s nice you’re here.");
 			dialogue.Enqueue("There is a lot to do, to be successful and show all those Academic naysayers I was right all along...");
@@ -53,7 +59,7 @@ public class clickcontrol : MonoBehaviour {
 			dialogue.Enqueue("I firmly believe in the historicity of the Homeric epics and therefore believe Troy is an actual place.");
 			dialogue.Enqueue("I really hope you have the same opinion on that.");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-		} else if(nameofobj == "homer") {
+		} else if (nameofobj == "homer") {
 			QuestionDialogue.Instance.ShowQuestion("A: Yes of course we can find Troy based on evidence in the Iliad. \n B: We must be careful because the Homeric epics are works of fiction composed some 500 years after the events its supposed to describe. It is unlikely they are accurate or useful. \n C: The homeric epics may offer some useful information but we should consider using other sources as well.",
 			 () => {Debug.Log("10 Punkte");}, 
 			 () => {Debug.Log("Keine Punkte");}, 
@@ -63,7 +69,7 @@ public class clickcontrol : MonoBehaviour {
 			dialogue.Enqueue("Oh damn my first choice of site was a bust but my colleague Frank has a different idea.");
 			dialogue.Enqueue("Find me the map, so I can see what he is talking about");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-			counter++; // jetzt auf 3
+			counter++; // jetzt 3
 		} else if (nameofobj == "plain"){
 			dialogue.Clear();
 			dialogue.Enqueue("By Jove! Frank may be right but I am very rich and have the media flair.");
@@ -81,7 +87,7 @@ public class clickcontrol : MonoBehaviour {
 			dialogue.Enqueue("But how to access it?");
 			dialogue.Enqueue("Can you find an object with which we could trigger a small explosion maybe?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-			counter++; // jetzt auf 4
+			counter++; // jetzt 4
 		} else if (nameofobj == "dynamite"){
 			QuestionDialogue.Instance.ShowQuestion("A: Perhaps we can go more slowly, digging each level carefully in order to  preserve as much material as possible.  \n B: Use dynamite to reach the correct level as quickly and efficiently as possible. \n C: The stratigraphic levels are often not so clear. You can probably excavate two-three levels at once without much issue,  and we can always go back if something looks particularly interesting.",
 			 () => {Debug.Log("5 Punkte"); 
@@ -95,7 +101,7 @@ public class clickcontrol : MonoBehaviour {
 			dialogue.Enqueue("With all this hard work we found some sherds.");
 			dialogue.Enqueue("Can you bring them to me, please?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-			counter++; // jetzt auf 5
+			counter++; //jetzt 5
 		} else if (nameofobj == "sherd"){
 			dialogue.Clear();
 			dialogue.Enqueue("This sherd looks very lame, I don’t think we should keep it.");
@@ -106,12 +112,14 @@ public class clickcontrol : MonoBehaviour {
 			dialogue.Enqueue("Have you seen the gold Headdress?");
 			dialogue.Enqueue("I mean the one that looks very expensive!");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-			counter++; // jetzt auf 6
+			counter++; //jetzt 6
 		} else if (nameofobj == "diadem"){
 			dialogue.Clear();
 			dialogue.Enqueue("Ah, thank you!");
 			dialogue.Enqueue("The findings, especially the very fancy gold ones, are the most important goal of the excavation. Correct?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+		} else {
+			Debug.Log("Irgendwas stimmt hier nicht");
 		}	
 	}
 
@@ -124,13 +132,13 @@ public class clickcontrol : MonoBehaviour {
 			dialogue.Enqueue("Even though this is still an exam in my class, and I want you to do great obviously, this experience is about being the best assistant to Schliemann as possible");
 			dialogue.Enqueue("So try choosing the answers he choose back then, and not the ones we learned about in class. ;)");
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
-			counter++; // jetzt auf 1
+			counter++; //jetzt 1
 		} else if (nameofobj == "SchliemannT" && counter == 1) {
 			dialogue.Clear();
 			dialogue.Enqueue("So, do you think I’m right, and we can find out where Troy is nowadays based on the Homeric epics?");
 			dialogue.Enqueue("Find me the books and choose your answer.");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-			counter++; // jetzt auf 2
+			counter++; //jetzt 2
 		} else if (nameofobj == "plain"){
 			dialogue.Clear();
 			dialogue.Enqueue("Hey *name* Some additional information for you on that:");
@@ -138,6 +146,7 @@ public class clickcontrol : MonoBehaviour {
 			dialogue.Enqueue("His colleague Frank Calvert, who owned part of the mound called Hisarlik advised him to try digging at his mound.");
 			dialogue.Enqueue("This is where 'Troy' turned out to be.");
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
+			//hier muss counter++
 		} else if (nameofobj == "sherd"){
 			QuestionDialogue.Instance.ShowQuestion("A: All information matters, and we should be as detailed in our collection as  possible. It could be useful for another project \n B: Keep only the significant ones, like bases, lips, handles or painted sherds which are diagnostic. We can throw the rest away. \n C: Yes, lets just throw it out. Who really cares about lamp bowls and scraps. There is way too many anyway.",
 			 () => {Debug.Log("0 Punkte");}, 
@@ -154,8 +163,8 @@ public class clickcontrol : MonoBehaviour {
 			 		FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);}, 
 			 () => {Debug.Log("0 Punkte");
 			 		FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);});
-			counter++; //jetzt auf 7
-		} else if (nameofobj == "daidem" && counter == 7){
+			counter++; // jetzt 7
+		} else if (nameofobj == "diadem" && counter == 7){
 			QuestionDialogue.Instance.ShowQuestion("A: Continue with Mycanae \n B: Quit to Main Menu \n C: Quit the Game",
 			 () => {SceneManager.LoadScene(2);}, 
 			 () => {SceneManager.LoadScene(0);}, 
