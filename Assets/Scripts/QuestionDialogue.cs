@@ -8,7 +8,7 @@ using TMPro;
 
 // Template für andere Scripts:
 // QuestionDialogue.Instance.ShowQuestion("Hier kommt die Frage hin?", () => {ActionA}, () => {ActionB}, () => {ActionC});
-// ‚Die Actions sind jeweils durch die Gewünschten Funktionen zu ersetzen
+// Die Actions sind jeweils durch die Gewünschten Funktionen zu ersetzen
 
 
 public class QuestionDialogue : MonoBehaviour {
