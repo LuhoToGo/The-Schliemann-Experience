@@ -45,10 +45,11 @@ public class clickcontrol : MonoBehaviour {
 
 
 
-	//ab hier beginnt der Dialog --> auslagern in eigene Klasse? Macht es das wirklich besser? 
+	//ab hier beginnt der Dialog --> auslagern in eigene Klasse? Ware vermutlich besser...
 	//vielleicht in strings zwischenlagern? Array? --> Übersicht. Wenn an Dialogen etwas geändert werden muss wirds kompliziert.
 	public void TriggerDialogue() { //wird aufgerufen wenn gameObject angeklickt wurde
 		if (nameofobj == "SchliemannT" && counter == 0){
+			FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
 			dialogue.Clear();
 			dialogue.Enqueue("Hello *name* It’s nice you’re here.");
 			dialogue.Enqueue("There is a lot to do, to be successful and show all those Academic naysayers I was right all along...");
@@ -58,10 +59,14 @@ public class clickcontrol : MonoBehaviour {
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 		} else if (nameofobj == "homer") {
 			QuestionDialogue.Instance.ShowQuestion("A: Yes of course we can find Troy based on evidence in the Iliad. \n B: We must be careful because the Homeric epics are works of fiction composed some 500 years after the events its supposed to describe. It is unlikely they are accurate or useful. \n C: The homeric epics may offer some useful information but we should consider using other sources as well.",
-			 () => {Debug.Log("10 Punkte");}, 
-			 () => {Debug.Log("Keine Punkte");}, 
-			 () => {Debug.Log("5 Punkte");});
+			 () => {Debug.Log("10 Punkte");
+			 		FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();}, 
+			 () => {Debug.Log("Keine Punkte");
+			 		FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();}, 
+			 () => {Debug.Log("5 Punkte");
+			 		FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();});
 		} else if (nameofobj == "SchliemannT" && counter == 2){
+			FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
 			FindObjectOfType<ObjToggleTroy>().ActivatePlain();
 			dialogue.Clear();
 			dialogue.Enqueue("Oh damn my first choice of site was a bust but my colleague Frank has a different idea.");
@@ -80,6 +85,7 @@ public class clickcontrol : MonoBehaviour {
 			 () => {Debug.Log("5 Punkte"); 
 			 		FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
 		} else if (nameofobj == "SchliemannT" && counter == 4){
+			FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
 			FindObjectOfType<ObjToggleTroy>().ActivateDynamite();
 			dialogue.Clear();
 			dialogue.Enqueue("The Trojan war happened a very long time ago so in theory the level of the Trojan war would be very low.");
@@ -90,12 +96,16 @@ public class clickcontrol : MonoBehaviour {
 		} else if (nameofobj == "dynamite"){
 			QuestionDialogue.Instance.ShowQuestion("A: Perhaps we can go more slowly, digging each level carefully in order to  preserve as much material as possible.  \n B: Use dynamite to reach the correct level as quickly and efficiently as possible. \n C: The stratigraphic levels are often not so clear. You can probably excavate two-three levels at once without much issue,  and we can always go back if something looks particularly interesting.",
 			 () => {Debug.Log("5 Punkte"); 
-			 		Debug.Log("EXPLOSION");}, 
+			 		Debug.Log("EXPLOSION");
+					FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();}, 
 			 () => {Debug.Log("10 Punkte"); 
-			 		Debug.Log("EXPLOSION");}, 
+			 		Debug.Log("EXPLOSION");
+					FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();}, 
 			 () => {Debug.Log("0 Punkte"); 
-			 		Debug.Log("EXPLOSION");});
+			 		Debug.Log("EXPLOSION");
+					FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();});
 		} else if (nameofobj == "SchliemannT" && counter == 5){
+			FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
 			FindObjectOfType<ObjToggleTroy>().ActivateSherd();
 			dialogue.Clear();
 			dialogue.Enqueue("With all this hard work we found some sherds.");
@@ -108,6 +118,7 @@ public class clickcontrol : MonoBehaviour {
 			dialogue.Enqueue("Do you agree *name*?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 		} else if (nameofobj == "SchliemannT" && counter == 7){
+			FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
 			FindObjectOfType<ObjToggleTroy>().ActivateDiadem();
 			dialogue.Clear();
 			dialogue.Enqueue("Have you seen the gold Headdress?");
@@ -148,12 +159,16 @@ public class clickcontrol : MonoBehaviour {
 			dialogue.Enqueue("His colleague Frank Calvert, who owned part of the mound called Hisarlik advised him to try digging at his mound.");
 			dialogue.Enqueue("This is where 'Troy' turned out to be.");
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
+			FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();	
 			counter++; //jetzt 4
 		} else if (nameofobj == "sherd" && counter == 6){
 			QuestionDialogue.Instance.ShowQuestion("A: All information matters, and we should be as detailed in our collection as  possible. It could be useful for another project \n B: Keep only the significant ones, like bases, lips, handles or painted sherds which are diagnostic. We can throw the rest away. \n C: Yes, lets just throw it out. Who really cares about lamp bowls and scraps. There is way too many anyway.",
-			 () => {Debug.Log("0 Punkte");}, 
-			 () => {Debug.Log("5 Punkte");}, 
-			 () => {Debug.Log("10 Punkte");});
+			 () => {Debug.Log("0 Punkte");
+			 		FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();}, 
+			 () => {Debug.Log("5 Punkte");
+			 		FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();}, 
+			 () => {Debug.Log("10 Punkte");
+			 		FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();});
 			counter++; //jetzt 7
 		} else if (nameofobj == "diadem" && counter == 8){
 			dialogue.Clear();

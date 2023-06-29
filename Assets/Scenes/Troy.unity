@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 42175398}
   - component: {fileID: 42175400}
   - component: {fileID: 42175399}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: textboxAssistant
   m_TagString: dialogue
   m_Icon: {fileID: 0}
@@ -622,8 +622,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68761288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 1.93, z: -6.898514}
-  m_LocalScale: {x: 0.039733615, y: 0.039733615, z: 0.039733615}
+  m_LocalPosition: {x: 0.0297, y: 2.0607, z: -6.898514}
+  m_LocalScale: {x: 0.025699701, y: 0.025699701, z: 0.025699701}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 747039007}
@@ -758,8 +758,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177458819}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.31, y: -0.64, z: -6.898514}
-  m_LocalScale: {x: 0.08968269, y: 0.08968269, z: 0.08968269}
+  m_LocalPosition: {x: 1.9501, y: -0.62, z: -6.898514}
+  m_LocalScale: {x: 0.05219533, y: 0.05219533, z: 0.05219533}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 747039007}
@@ -997,7 +997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487194634}
   - component: {fileID: 487194635}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: AssistantBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1276,8 +1276,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561063027}
   m_LocalRotation: {x: -0, y: -0, z: -0.29417264, w: 0.9557523}
-  m_LocalPosition: {x: 8.88208, y: -1.4398556, z: -6.898514}
-  m_LocalScale: {x: 0.5438739, y: 0.5438739, z: 0.5438739}
+  m_LocalPosition: {x: 9.04, y: -1.44, z: -6.898514}
+  m_LocalScale: {x: 0.31071517, y: 0.31071517, z: 0.31071517}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 747039007}
@@ -1656,6 +1656,7 @@ MonoBehaviour:
   diadem: {fileID: 561063027}
   plain: {fileID: 68761288}
   dynamite: {fileID: 177458819}
+  schliemann: {fileID: 1408239592}
 --- !u!114 &747039009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2326,8 +2327,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308522247}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.95, y: 0.46, z: -6.898514}
-  m_LocalScale: {x: 0.30980256, y: 0.30980256, z: 0.30980256}
+  m_LocalPosition: {x: -5.6542, y: 0.6294, z: -6.898514}
+  m_LocalScale: {x: 0.22017667, y: 0.22017667, z: 0.22017667}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 747039007}
@@ -2478,7 +2479,7 @@ GameObject:
   - component: {fileID: 1408239596}
   - component: {fileID: 1408239598}
   - component: {fileID: 1408239597}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SchliemannT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2958,7 +2959,7 @@ GameObject:
   - component: {fileID: 1883780494}
   - component: {fileID: 1883780493}
   - component: {fileID: 1883780495}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: textbox
   m_TagString: dialogue
   m_Icon: {fileID: 0}
@@ -3520,8 +3521,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2091638625}
   m_LocalRotation: {x: -0.0015290214, y: 0.00037703224, z: 0.23941253, w: -0.9709167}
-  m_LocalPosition: {x: -2.1, y: -0.7, z: -6.89}
-  m_LocalScale: {x: 0.2331802, y: 0.2331802, z: 0.2331802}
+  m_LocalPosition: {x: -2.06, y: -0.57, z: -6.89}
+  m_LocalScale: {x: 0.15935534, y: 0.15935534, z: 0.15935534}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 747039007}

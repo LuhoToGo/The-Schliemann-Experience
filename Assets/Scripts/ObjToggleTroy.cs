@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//template: FindObjectOfType<ObjToggle>().ActivateObject();
-//template: FindObjectOfType<ObjToggle>().DeactivateObject();
+//template: FindObjectOfType<ObjToggleTroy>().ActivateObject();
+//template: FindObjectOfType<ObjToggleTroy>().DeactivateObject();
+
+//templateS: FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();
+//templateS: FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
 
 
-//Das ist wahnsinnig unschoen, aber funktioniert erstmal
+//Das ist wahnsinnig unschoen, aber funktioniert erstmal. Ich glaub ich hab Migraene.
 public class ObjToggleTroy : MonoBehaviour
 {
     public GameObject homer; 
@@ -14,45 +17,74 @@ public class ObjToggleTroy : MonoBehaviour
     public GameObject diadem; 
     public GameObject plain; 
     public GameObject dynamite; 
+    public GameObject schliemann;
 
+    private Color homerColor;
+    private Color sherdColor;
+    private Color diademColor;
+    private Color plainColor;
+    private Color dynamiteColor;
+    
+    public void ActivateSchliemann(){
+        schliemann.GetComponent<BoxCollider2D>().enabled = true;
+    }
 
+    public void DeactivateSchliemann(){
+        schliemann.GetComponent<BoxCollider2D>().enabled = false;
+    }
+    
     public void ActivateHomer(){
-        homer.SetActive(true);
+        homer.GetComponent<BoxCollider2D>().enabled = true;
+        homer.GetComponent<Renderer>().material.color = homerColor;
     }
 
     public void DeactivateHomer(){
-        homer.SetActive(false);
+        homer.GetComponent<BoxCollider2D>().enabled = false;
+        homerColor = homer.GetComponent<Renderer>().material.color;
+    	homer.GetComponent<Renderer>().material.color = Color.grey;
     }
 
     public void ActivateSherd(){
-        sherd.SetActive(true);
+        sherd.GetComponent<BoxCollider2D>().enabled = true;
+        sherd.GetComponent<Renderer>().material.color = sherdColor;
     }
 
     public void DeactivateSherd(){
-        sherd.SetActive(false);
+        sherd.GetComponent<BoxCollider2D>().enabled = false;
+        sherdColor = sherd.GetComponent<Renderer>().material.color;
+    	sherd.GetComponent<Renderer>().material.color = Color.grey;
     }
 
     public void ActivateDiadem(){
-        diadem.SetActive(true);
+        diadem.GetComponent<BoxCollider2D>().enabled = true;
+        diadem.GetComponent<Renderer>().material.color = diademColor;
     }
 
     public void DeactivateDiadem(){
-        diadem.SetActive(false);
+        diadem.GetComponent<BoxCollider2D>().enabled = false;
+        diademColor = diadem.GetComponent<Renderer>().material.color;
+    	diadem.GetComponent<Renderer>().material.color = Color.grey;
     }
 
     public void ActivatePlain(){
-        plain.SetActive(true);
+        plain.GetComponent<BoxCollider2D>().enabled = true;
+        plain.GetComponent<Renderer>().material.color = plainColor;
     }
 
     public void DeactivatePlain(){
-        plain.SetActive(false);
+        plain.GetComponent<BoxCollider2D>().enabled = false;
+        plainColor = plain.GetComponent<Renderer>().material.color;
+    	plain.GetComponent<Renderer>().material.color = Color.grey;
     }
 
     public void ActivateDynamite(){
-        dynamite.SetActive(true);
+        dynamite.GetComponent<BoxCollider2D>().enabled = true;
+        dynamite.GetComponent<Renderer>().material.color = dynamiteColor;
     }
 
     public void DeactivateDynamite(){
-        dynamite.SetActive(false);
+        dynamite.GetComponent<BoxCollider2D>().enabled = false;
+        dynamiteColor = dynamite.GetComponent<Renderer>().material.color;
+    	dynamite.GetComponent<Renderer>().material.color = Color.grey;
     }
 }
