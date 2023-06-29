@@ -12,7 +12,7 @@ public class clickcontrol : MonoBehaviour {
     public Vector2 hotSpot = Vector2.zero;
 	public Queue<string> dialogue;
  	private Color startcolor;
-	public static int counter = 0;
+	public static int counter = 0; 
 
 
 	void Start () {
@@ -49,7 +49,8 @@ public class clickcontrol : MonoBehaviour {
 
 
 
-	//ab hier beginnt der Dialog --> auslagern in eigene Klasse? Macht es das wirklich besser?
+	//ab hier beginnt der Dialog --> auslagern in eigene Klasse? Macht es das wirklich besser? 
+	//vielleicht in strings zwischenlagern? Array? --> Übersicht. Wenn an Dialogen etwas geändert werden muss wirds kompliziert.
 	public void TriggerDialogue() { //wird aufgerufen wenn gameObject angeklickt wurde
 		if (nameofobj == "SchliemannT" && counter == 0){
 			dialogue.Clear();
@@ -81,13 +82,13 @@ public class clickcontrol : MonoBehaviour {
 			 		FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("5 Punkte"); 
 			 		FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
-		} else if (nameofobj == "SchliemannT" && counter == 3){
+		} else if (nameofobj == "SchliemannT" && counter == 4){
 			dialogue.Clear();
 			dialogue.Enqueue("The Trojan war happened a very long time ago so in theory the level of the Trojan war would be very low.");
 			dialogue.Enqueue("But how to access it?");
 			dialogue.Enqueue("Can you find an object with which we could trigger a small explosion maybe?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-			counter++; // jetzt 4
+			counter++; // jetzt 5
 		} else if (nameofobj == "dynamite"){
 			QuestionDialogue.Instance.ShowQuestion("A: Perhaps we can go more slowly, digging each level carefully in order to  preserve as much material as possible.  \n B: Use dynamite to reach the correct level as quickly and efficiently as possible. \n C: The stratigraphic levels are often not so clear. You can probably excavate two-three levels at once without much issue,  and we can always go back if something looks particularly interesting.",
 			 () => {Debug.Log("5 Punkte"); 
@@ -96,23 +97,23 @@ public class clickcontrol : MonoBehaviour {
 			 		Debug.Log("EXPLOSION");}, 
 			 () => {Debug.Log("0 Punkte"); 
 			 		Debug.Log("EXPLOSION");});
-		} else if (nameofobj == "SchliemannT" && counter == 4){
+		} else if (nameofobj == "SchliemannT" && counter == 5){
 			dialogue.Clear();
 			dialogue.Enqueue("With all this hard work we found some sherds.");
 			dialogue.Enqueue("Can you bring them to me, please?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-			counter++; //jetzt 5
+			counter++; //jetzt 6
 		} else if (nameofobj == "sherd"){
 			dialogue.Clear();
 			dialogue.Enqueue("This sherd looks very lame, I don’t think we should keep it.");
 			dialogue.Enqueue("Do you agree *name*?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-		} else if (nameofobj == "SchliemannT" && counter == 5){
+		} else if (nameofobj == "SchliemannT" && counter == 7){
 			dialogue.Clear();
 			dialogue.Enqueue("Have you seen the gold Headdress?");
 			dialogue.Enqueue("I mean the one that looks very expensive!");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-			counter++; //jetzt 6
+			counter++; //jetzt 8
 		} else if (nameofobj == "diadem"){
 			dialogue.Clear();
 			dialogue.Enqueue("Ah, thank you!");
@@ -139,20 +140,21 @@ public class clickcontrol : MonoBehaviour {
 			dialogue.Enqueue("Find me the books and choose your answer.");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 			counter++; //jetzt 2
-		} else if (nameofobj == "plain"){
+		} else if (nameofobj == "plain" && counter == 3){
 			dialogue.Clear();
 			dialogue.Enqueue("Hey *name* Some additional information for you on that:");
 			dialogue.Enqueue("Schliemann was actually digging at a site called Pinarbasi and not finding anything and was about to give up.");
 			dialogue.Enqueue("His colleague Frank Calvert, who owned part of the mound called Hisarlik advised him to try digging at his mound.");
 			dialogue.Enqueue("This is where 'Troy' turned out to be.");
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
-			//hier muss counter++
-		} else if (nameofobj == "sherd"){
+			counter++; //jetzt 4
+		} else if (nameofobj == "sherd" && counter == 6){
 			QuestionDialogue.Instance.ShowQuestion("A: All information matters, and we should be as detailed in our collection as  possible. It could be useful for another project \n B: Keep only the significant ones, like bases, lips, handles or painted sherds which are diagnostic. We can throw the rest away. \n C: Yes, lets just throw it out. Who really cares about lamp bowls and scraps. There is way too many anyway.",
 			 () => {Debug.Log("0 Punkte");}, 
 			 () => {Debug.Log("5 Punkte");}, 
 			 () => {Debug.Log("10 Punkte");});
-		} else if (nameofobj == "diadem"){
+			counter++; //jetzt 7
+		} else if (nameofobj == "diadem" && counter == 8){
 			dialogue.Clear();
 			dialogue.Enqueue("*name*, you may be interested to know that The 'Treasure of Priam', which the diadem you see was part, was uncovered as during Schliemann's initial excavations.");
 			dialogue.Enqueue("It wasn't until Carl Blagen excavated at the site (1932-1938) that the stratigraphy was established and revealed the treasure dated to Troy II (2550-2300) and not Troy VII (1300-1050) when Priam, if he existed, would have ruled the city.");
@@ -163,8 +165,8 @@ public class clickcontrol : MonoBehaviour {
 			 		FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);}, 
 			 () => {Debug.Log("0 Punkte");
 			 		FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);});
-			counter++; // jetzt 7
-		} else if (nameofobj == "diadem" && counter == 7){
+			counter++; // jetzt 9
+		} else if (nameofobj == "diadem" && counter == 9){
 			QuestionDialogue.Instance.ShowQuestion("A: Continue with Mycanae \n B: Quit to Main Menu \n C: Quit the Game",
 			 () => {SceneManager.LoadScene(2);}, 
 			 () => {SceneManager.LoadScene(0);}, 
