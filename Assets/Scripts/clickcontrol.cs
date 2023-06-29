@@ -18,10 +18,6 @@ public class clickcontrol : MonoBehaviour {
 	void Start () {
 		dialogue = new Queue<string>();
 	}
-
-	void Update() {
-		Debug.Log(counter);
-	}
 	
 	void OnMouseDown() {
 		nameofobj = gameObject.name;
@@ -66,6 +62,7 @@ public class clickcontrol : MonoBehaviour {
 			 () => {Debug.Log("Keine Punkte");}, 
 			 () => {Debug.Log("5 Punkte");});
 		} else if (nameofobj == "SchliemannT" && counter == 2){
+			FindObjectOfType<ObjToggleTroy>().ActivatePlain();
 			dialogue.Clear();
 			dialogue.Enqueue("Oh damn my first choice of site was a bust but my colleague Frank has a different idea.");
 			dialogue.Enqueue("Find me the map, so I can see what he is talking about");
@@ -83,6 +80,7 @@ public class clickcontrol : MonoBehaviour {
 			 () => {Debug.Log("5 Punkte"); 
 			 		FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
 		} else if (nameofobj == "SchliemannT" && counter == 4){
+			FindObjectOfType<ObjToggleTroy>().ActivateDynamite();
 			dialogue.Clear();
 			dialogue.Enqueue("The Trojan war happened a very long time ago so in theory the level of the Trojan war would be very low.");
 			dialogue.Enqueue("But how to access it?");
@@ -98,6 +96,7 @@ public class clickcontrol : MonoBehaviour {
 			 () => {Debug.Log("0 Punkte"); 
 			 		Debug.Log("EXPLOSION");});
 		} else if (nameofobj == "SchliemannT" && counter == 5){
+			FindObjectOfType<ObjToggleTroy>().ActivateSherd();
 			dialogue.Clear();
 			dialogue.Enqueue("With all this hard work we found some sherds.");
 			dialogue.Enqueue("Can you bring them to me, please?");
@@ -109,6 +108,7 @@ public class clickcontrol : MonoBehaviour {
 			dialogue.Enqueue("Do you agree *name*?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 		} else if (nameofobj == "SchliemannT" && counter == 7){
+			FindObjectOfType<ObjToggleTroy>().ActivateDiadem();
 			dialogue.Clear();
 			dialogue.Enqueue("Have you seen the gold Headdress?");
 			dialogue.Enqueue("I mean the one that looks very expensive!");
@@ -135,6 +135,7 @@ public class clickcontrol : MonoBehaviour {
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
 			counter++; //jetzt 1
 		} else if (nameofobj == "SchliemannT" && counter == 1) {
+			FindObjectOfType<ObjToggleTroy>().ActivateHomer();
 			dialogue.Clear();
 			dialogue.Enqueue("So, do you think I’m right, and we can find out where Troy is nowadays based on the Homeric epics?");
 			dialogue.Enqueue("Find me the books and choose your answer.");
