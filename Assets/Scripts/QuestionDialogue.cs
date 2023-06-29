@@ -8,12 +8,11 @@ using TMPro;
 
 // Template für andere Scripts:
 // QuestionDialogue.Instance.ShowQuestion("Hier kommt die Frage hin?", () => {ActionA}, () => {ActionB}, () => {ActionC});
-// ‚Die Actions sind jeweils durch die Gewünschten Funktionen zu ersetzen
+// Die Actions sind jeweils durch die Gewünschten Funktionen zu ersetzen
 
 
 public class QuestionDialogue : MonoBehaviour {
     
-
     public static QuestionDialogue Instance { get; private set;}
 
     private TextMeshProUGUI textMeshPro;
@@ -29,14 +28,6 @@ public class QuestionDialogue : MonoBehaviour {
         buttonC = transform.Find("Button C").GetComponent<Button>();
 
         Hide();
-
-        //ShowQuestion("Do you want to do this?", () => { //das hier nur zu testzwecken, kann danach raus
-        //    Debug.Log("Option A");
-        //},() => {
-        //    Debug.Log("Option B");
-        //},() => {
-        //    Debug.Log("Option C");
-        //});                                                //bis hier
     }
 
     public void ShowQuestion(string questionText, Action actionA, Action actionB, Action actionC) {
