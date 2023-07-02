@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
@@ -13,10 +14,14 @@ public class DialogueManager : MonoBehaviour
     public Animator animatorAssistant;
     private Queue<string> sentences;
     private bool assistant;
+    private string sceneName;
 
     void Start()
     {
         sentences = new Queue<string>();
+
+		Scene currentScene = SceneManager.GetActiveScene();
+		sceneName = currentScene.name;
     }
 
 
@@ -71,7 +76,12 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", false);
         animatorAssistant.SetBool("IsOpen", false);
         Debug.Log("End of Conversation");
-        FindObjectOfType<dialogueTroy>().postDialogue();
+
+        if(sceneName == "Troy"){
+            FindObjectOfType<DialogueTroy>().postDialogue();
+        } else if (sceneName == "Mycenae"){
+            FindObjectOfType<DialogueMycenae>().postDialogue();
+        }
     }
 
 }

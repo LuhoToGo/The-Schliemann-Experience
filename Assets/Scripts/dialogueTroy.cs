@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
-public class dialogueTroy : MonoBehaviour {
+public class DialogueTroy : MonoBehaviour {
 
 	public static string nameofobj;
 	public Texture2D cursorTexture1;
