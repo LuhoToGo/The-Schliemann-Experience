@@ -57,71 +57,72 @@ public class dialogueTroy : MonoBehaviour {
 		} else if (nameofobj == "homer") {
 			QuestionDialogue.Instance.ShowQuestion("A: Yes of course we can find Troy based on evidence in the Iliad. \n B: We must be careful because the Homeric epics are works of fiction composed some 500 years after the events its supposed to describe. It is unlikely they are accurate or useful. \n C: The homeric epics may offer some useful information but we should consider using other sources as well.",
 			 () => {Debug.Log("10 Punkte");
-			 		FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();}, 
+			 		dialogue.Clear();
+					dialogue.Enqueue("I am proud of your confidence and that you always see success ahead. That's the path we’re taking.");
+					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("Keine Punkte");
-			 		FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();}, 
+			 		dialogue.Clear();
+					dialogue.Enqueue("I don't really support that decision. Fortunately, you are only my assistant, and I still have the decision-making power.");
+					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("5 Punkte");
-			 		FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();});
-		} else if (nameofobj == "SchliemannT" && counter == 2){
+			 		dialogue.Clear();
+					dialogue.Enqueue("I don't really support that decision. Fortunately, you are only my assistant, and I still have the decision-making power.");
+					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
+		} else if (nameofobj == "SchliemannT" && counter == 3){
 			FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
-			FindObjectOfType<ObjToggleTroy>().ActivatePlain();
 			dialogue.Clear();
 			dialogue.Enqueue("Oh damn my first choice of site was a bust but my colleague Frank has a different idea.");
 			dialogue.Enqueue("Find me the map, so I can see what he is talking about");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-			counter++; // jetzt 3
+			counter++; // jetzt 4
 		} else if (nameofobj == "plain"){
 			dialogue.Clear();
 			dialogue.Enqueue("By Jove! Frank may be right but I am very rich and have the media flair.");
 			dialogue.Enqueue("I think I should get all the credit for discovering Troy, and keep all the treasure.");
-			QuestionDialogue.Instance.ShowQuestion("A: Νo, We should give full credit to all our colleagues and put the artefacts in a museum for everyone to enjoy. \n B: Agreed! We will get more attention and funding that way. One great man making a great discovery! \n C: Perhaps we can give Frank  a footnote?",
-			 () => {Debug.Log("Keine Punkte"); 
-			 		FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
-			 () => {Debug.Log("10 Punkte"); 
-			 		FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
-			 () => {Debug.Log("5 Punkte"); 
-			 		FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
-		} else if (nameofobj == "SchliemannT" && counter == 4){
+			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+		} else if (nameofobj == "SchliemannT" && counter == 6){
 			FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
-			FindObjectOfType<ObjToggleTroy>().ActivateDynamite();
 			dialogue.Clear();
 			dialogue.Enqueue("The Trojan war happened a very long time ago so in theory the level of the Trojan war would be very low.");
 			dialogue.Enqueue("But how to access it?");
 			dialogue.Enqueue("Can you find an object with which we could trigger a small explosion maybe?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-			counter++; // jetzt 5
+			counter++; // jetzt 7
 		} else if (nameofobj == "dynamite"){
 			QuestionDialogue.Instance.ShowQuestion("A: Perhaps we can go more slowly, digging each level carefully in order to  preserve as much material as possible.  \n B: Use dynamite to reach the correct level as quickly and efficiently as possible. \n C: The stratigraphic levels are often not so clear. You can probably excavate two-three levels at once without much issue,  and we can always go back if something looks particularly interesting.",
-			 () => {Debug.Log("5 Punkte"); 
-			 		FindObjectOfType<ObjToggleTroy>().DeactivateBackground();
-					FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();}, 
-			 () => {Debug.Log("10 Punkte"); 
-			 		FindObjectOfType<ObjToggleTroy>().DeactivateBackground();
-					FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();}, 
 			 () => {Debug.Log("0 Punkte"); 
-			 		FindObjectOfType<ObjToggleTroy>().DeactivateBackground();
-					FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();});
-		} else if (nameofobj == "SchliemannT" && counter == 5){
+					dialogue.Clear();
+					dialogue.Enqueue("Don't be so hesitant. That way you won't become a great archaeologist like me.");
+					dialogue.Enqueue("Just listen to me, I know my stuff.");
+					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
+			 () => {Debug.Log("10 Punkte"); 
+					dialogue.Clear();
+					dialogue.Enqueue("That's what I call effectiveness!");
+					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
+			 () => {Debug.Log("5 Punkte"); 
+					dialogue.Clear();
+					dialogue.Enqueue("Don't be so hesitant. That way you won't become a great archaeologist like me.");
+					dialogue.Enqueue("Just listen to me, I know my stuff.");
+					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
+		} else if (nameofobj == "SchliemannT" && counter == 7){
 			FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
-			FindObjectOfType<ObjToggleTroy>().ActivateSherd();
 			dialogue.Clear();
 			dialogue.Enqueue("With all this hard work we found some sherds.");
 			dialogue.Enqueue("Can you bring them to me, please?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-			counter++; //jetzt 6
+			counter++; //jetzt 8
 		} else if (nameofobj == "sherd"){
 			dialogue.Clear();
-			dialogue.Enqueue("This sherd looks very lame, I don’t think we should keep it.");
+			dialogue.Enqueue("These shards look very lame, I don’t think we should keep them.");
 			dialogue.Enqueue("Do you agree *name*?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-		} else if (nameofobj == "SchliemannT" && counter == 7){
+		} else if (nameofobj == "SchliemannT" && counter == 9){
 			FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
-			FindObjectOfType<ObjToggleTroy>().ActivateDiadem();
 			dialogue.Clear();
 			dialogue.Enqueue("Have you seen the gold Headdress?");
 			dialogue.Enqueue("I mean the one that looks very expensive!");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-			counter++; //jetzt 8
+			counter++; //jetzt 10
 		} else if (nameofobj == "diadem"){
 			FindObjectOfType<ObjToggleTroy>().SwapSchliemann();
 			dialogue.Clear();
@@ -133,8 +134,9 @@ public class dialogueTroy : MonoBehaviour {
 		}	
 	}
 
+			
+			
 	public void postDialogue(){ //wird nach jedem Dialog aufgerufen
-		
 		if (nameofobj == "SchliemannT" && counter == 0){
 			dialogue.Clear();
 			dialogue.Enqueue("Hi *name*, here I am already!");
@@ -144,43 +146,91 @@ public class dialogueTroy : MonoBehaviour {
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
 			counter++; //jetzt 1
 		} else if (nameofobj == "SchliemannT" && counter == 1) {
-			FindObjectOfType<ObjToggleTroy>().ActivateHomer();
 			dialogue.Clear();
 			dialogue.Enqueue("So, do you think I’m right, and we can find out where Troy is nowadays based on the Homeric epics?");
 			dialogue.Enqueue("Find me the books and choose your answer.");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 			counter++; //jetzt 2
-		} else if (nameofobj == "plain" && counter == 3){
+		} else if (nameofobj == "SchliemannT" && counter == 2) {
+			FindObjectOfType<ObjToggleTroy>().ActivateHomer();
+			counter++; //jetzt 3
+		} else if (nameofobj == "homer" && counter == 3) {
+			FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();
+		} else if (nameofobj == "SchliemannT" && counter == 4) {
+			FindObjectOfType<ObjToggleTroy>().ActivatePlain();
+		} else if (nameofobj == "plain" && counter == 4){
+			QuestionDialogue.Instance.ShowQuestion("A: Νo, We should give full credit to all our colleagues and put the artefacts in a museum for everyone to enjoy. \n B: Agreed! We will get more attention and funding that way. One great man making a great discovery! \n C: Perhaps we can give Frank  a footnote?",
+			 () => {Debug.Log("Keine Punkte");
+			 		dialogue.Clear();
+					dialogue.Enqueue("Oh, you are too selfless. I will show you how to do it.");
+					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
+			 () => {Debug.Log("10 Punkte");
+			 		dialogue.Clear();
+					dialogue.Enqueue("I really like how you are starting to think like I do.");
+					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
+			 () => {Debug.Log("5 Punkte");
+			 		dialogue.Clear();
+					dialogue.Enqueue("Oh, you are too selfless. I will show you how to do it.");
+					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
+			counter++; //jetzt 5
+		} else if (nameofobj == "plain" && counter == 5){
 			dialogue.Clear();
 			dialogue.Enqueue("Hey *name* Some additional information for you on that:");
 			dialogue.Enqueue("Schliemann was actually digging at a site called Pinarbasi and not finding anything and was about to give up.");
 			dialogue.Enqueue("His colleague Frank Calvert, who owned part of the mound called Hisarlik advised him to try digging at his mound.");
 			dialogue.Enqueue("This is where 'Troy' turned out to be.");
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
+			counter++; //jetzt 6
+		} else if (nameofobj == "plain" && counter == 6){
 			FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();	
-			counter++; //jetzt 4
-		} else if (nameofobj == "sherd" && counter == 6){
+		} else if (nameofobj == "SchliemannT" && counter == 7){
+			FindObjectOfType<ObjToggleTroy>().ActivateDynamite();
+		} else if (nameofobj == "dynamite" && counter == 7){
+		 	FindObjectOfType<ObjToggleTroy>().DeactivateBackground();
+			FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();
+		} else if (nameofobj == "SchliemannT" && counter == 8){
+			FindObjectOfType<ObjToggleTroy>().ActivateSherd();
+		} else if (nameofobj == "sherd" && counter == 8){
 			QuestionDialogue.Instance.ShowQuestion("A: All information matters, and we should be as detailed in our collection as  possible. It could be useful for another project \n B: Keep only the significant ones, like bases, lips, handles or painted sherds which are diagnostic. We can throw the rest away. \n C: Yes, lets just throw it out. Who really cares about lamp bowls and scraps. There is way too many anyway.",
 			 () => {Debug.Log("0 Punkte");
-			 		FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();}, 
+			 		dialogue.Clear();
+					dialogue.Enqueue("You know what? Put them away anyway, I don't want to see these shards anymore during this dig.");
+					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("5 Punkte");
-			 		FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();}, 
+			 		dialogue.Clear();
+					dialogue.Enqueue("You know what? Put them away anyway, I don't want to see these shards anymore during this dig.");
+					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("10 Punkte");
-			 		FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();});
-			counter++; //jetzt 7
-		} else if (nameofobj == "diadem" && counter == 8){
+			 		dialogue.Clear();
+					dialogue.Enqueue("You're right, we should get rid of the junk, it doesn't look very promising.");
+					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
+			counter++; //jetzt 9
+		} else if (nameofobj == "sherd" && counter == 9){
+			FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();
+		} else if (nameofobj == "SchliemannT" && counter == 10){
+			FindObjectOfType<ObjToggleTroy>().ActivateDiadem();
+		} else if (nameofobj == "diadem" && counter == 10){
+			QuestionDialogue.Instance.ShowQuestion("A: Absolutely! It gets the most attention. We should give it an inaccurate name to sell more newspapers and have your wife model it  \n B: Νo, the findings alone is not the only goal. The archaeological context matters. Have we even checked if this is from the time we claim it is. \n C: The gold findings are not the only important items, the media might like them but Museums and fellow archaeologists  are interested in more than that. Have you included these other aspects in your reports Dr. Schliemann?",
+			 () => {Debug.Log("10 Punkte");
+					dialogue.Clear();
+					dialogue.Enqueue("That’s it! That’s what we are doing.");
+					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
+			 () => {Debug.Log("5 Punkte");
+			 		dialogue.Clear();
+					dialogue.Enqueue("You’re always talking about context and morality… Boooring!");
+					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
+			 () => {Debug.Log("0 Punkte");
+			 		dialogue.Clear();
+					dialogue.Enqueue("You’re always talking about context and morality… Boooring!");
+					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
+			counter++; // jetzt 11
+		} else if (nameofobj == "diadem" && counter == 11){
 			dialogue.Clear();
 			dialogue.Enqueue("*name*, you may be interested to know that The 'Treasure of Priam', which the diadem you see was part, was uncovered as during Schliemann's initial excavations.");
 			dialogue.Enqueue("It wasn't until Carl Blagen excavated at the site (1932-1938) that the stratigraphy was established and revealed the treasure dated to Troy II (2550-2300) and not Troy VII (1300-1050) when Priam, if he existed, would have ruled the city.");
-			QuestionDialogue.Instance.ShowQuestion("A: Absolutely! It gets the most attention. We should give it an inaccurate name to sell more newspapers and have your wife model it  \n B: Νo, the findings alone is not the only goal. The archaeological context matters. Have we even checked if this is from the time we claim it is. \n C: The gold findings are not the only important items, the media might like them but Museums and fellow archaeologists  are interested in more than that. Have you included these other aspects in your reports Dr. Schliemann?",
-			 () => {Debug.Log("10 Punkte");
-			 		FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);}, 
-			 () => {Debug.Log("5 Punkte");
-			 		FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);}, 
-			 () => {Debug.Log("0 Punkte");
-			 		FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);});
-			counter++; // jetzt 9
-		} else if (nameofobj == "diadem" && counter == 9){
+			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
+			counter++; //jetzt 12
+		} else if (nameofobj == "diadem" && counter == 12){
 			QuestionDialogue.Instance.ShowQuestion("A: Continue with Mycanae \n B: Quit to Main Menu \n C: Quit the Game",
 			 () => {SceneManager.LoadScene(2);}, 
 			 () => {SceneManager.LoadScene(0);}, 
