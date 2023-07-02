@@ -13,7 +13,7 @@ using UnityEngine;
 public class ObjToggleTroy : MonoBehaviour
 {
     public GameObject homer; 
-    public GameObject sherd; 
+    public GameObject shard; 
     public GameObject diadem; 
     public GameObject plain; 
     public GameObject dynamite; 
@@ -23,7 +23,7 @@ public class ObjToggleTroy : MonoBehaviour
 
 
     private Color homerColor;
-    private Color sherdColor;
+    private Color shardColor;
     private Color diademColor;
     private Color plainColor;
     private Color dynamiteColor;
@@ -56,15 +56,15 @@ public class ObjToggleTroy : MonoBehaviour
     	homer.GetComponent<Renderer>().material.color = Color.grey;
     }
 
-    public void ActivateSherd(){
-        sherd.GetComponent<BoxCollider2D>().enabled = true;
-        sherd.GetComponent<Renderer>().material.color = sherdColor;
+    public void ActivateShard(){
+        shard.GetComponent<BoxCollider2D>().enabled = true;
+        shard.GetComponent<Renderer>().material.color = shardColor;
     }
 
-    public void DeactivateSherd(){
-        sherd.GetComponent<BoxCollider2D>().enabled = false;
-        sherdColor = sherd.GetComponent<Renderer>().material.color;
-    	sherd.GetComponent<Renderer>().material.color = Color.grey;
+    public void DeactivateShard(){
+        shard.GetComponent<BoxCollider2D>().enabled = false;
+        shardColor = shard.GetComponent<Renderer>().material.color;
+    	shard.GetComponent<Renderer>().material.color = Color.grey;
     }
 
     public void ActivateDiadem(){

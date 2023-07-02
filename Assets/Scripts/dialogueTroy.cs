@@ -107,11 +107,11 @@ public class dialogueTroy : MonoBehaviour {
 		} else if (nameofobj == "SchliemannT" && counter == 7){
 			FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
 			dialogue.Clear();
-			dialogue.Enqueue("With all this hard work we found some sherds.");
+			dialogue.Enqueue("With all this hard work we found some shards.");
 			dialogue.Enqueue("Can you bring them to me, please?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 			counter++; //jetzt 8
-		} else if (nameofobj == "sherd"){
+		} else if (nameofobj == "shard"){
 			dialogue.Clear();
 			dialogue.Enqueue("These shards look very lame, I don’t think we should keep them.");
 			dialogue.Enqueue("Do you agree *name*?");
@@ -189,9 +189,9 @@ public class dialogueTroy : MonoBehaviour {
 		 	FindObjectOfType<ObjToggleTroy>().DeactivateBackground();
 			FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();
 		} else if (nameofobj == "SchliemannT" && counter == 8){
-			FindObjectOfType<ObjToggleTroy>().ActivateSherd();
-		} else if (nameofobj == "sherd" && counter == 8){
-			QuestionDialogue.Instance.ShowQuestion("A: All information matters, and we should be as detailed in our collection as  possible. It could be useful for another project \n B: Keep only the significant ones, like bases, lips, handles or painted sherds which are diagnostic. We can throw the rest away. \n C: Yes, lets just throw it out. Who really cares about lamp bowls and scraps. There is way too many anyway.",
+			FindObjectOfType<ObjToggleTroy>().ActivateShard();
+		} else if (nameofobj == "shard" && counter == 8){
+			QuestionDialogue.Instance.ShowQuestion("A: All information matters, and we should be as detailed in our collection as  possible. It could be useful for another project \n B: Keep only the significant ones, like bases, lips, handles or painted shards which are diagnostic. We can throw the rest away. \n C: Yes, lets just throw it out. Who really cares about lamp bowls and scraps. There is way too many anyway.",
 			 () => {Debug.Log("0 Punkte");
 			 		dialogue.Clear();
 					dialogue.Enqueue("You know what? Put them away anyway, I don't want to see these shards anymore during this dig.");
@@ -205,7 +205,7 @@ public class dialogueTroy : MonoBehaviour {
 					dialogue.Enqueue("You're right, we should get rid of the junk, it doesn't look very promising.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
 			counter++; //jetzt 9
-		} else if (nameofobj == "sherd" && counter == 9){
+		} else if (nameofobj == "shard" && counter == 9){
 			FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();
 		} else if (nameofobj == "SchliemannT" && counter == 10){
 			FindObjectOfType<ObjToggleTroy>().ActivateDiadem();

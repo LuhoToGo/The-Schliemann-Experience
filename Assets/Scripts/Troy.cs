@@ -8,7 +8,7 @@ public class Troy : MonoBehaviour
     void Start()
     {
         FindObjectOfType<ObjToggleTroy>().DeactivateHomer();
-        FindObjectOfType<ObjToggleTroy>().DeactivateSherd();
+        FindObjectOfType<ObjToggleTroy>().DeactivateShard();
         FindObjectOfType<ObjToggleTroy>().DeactivateDiadem();
         FindObjectOfType<ObjToggleTroy>().DeactivatePlain();
         FindObjectOfType<ObjToggleTroy>().DeactivateDynamite();
