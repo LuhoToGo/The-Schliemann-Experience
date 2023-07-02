@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
-public class clickcontrol : MonoBehaviour {
+public class dialogueTroy : MonoBehaviour {
 
 	public static string nameofobj;
 	public Texture2D cursorTexture1;
@@ -44,9 +44,6 @@ public class clickcontrol : MonoBehaviour {
 	
 
 
-
-	//ab hier beginnt der Dialog --> auslagern in eigene Klasse? Ware vermutlich besser...
-	//vielleicht in strings zwischenlagern? Array? --> Übersicht. Wenn an Dialogen etwas geändert werden muss wirds kompliziert.
 	public void TriggerDialogue() { //wird aufgerufen wenn gameObject angeklickt wurde
 		if (nameofobj == "SchliemannT" && counter == 0){
 			FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
@@ -96,13 +93,13 @@ public class clickcontrol : MonoBehaviour {
 		} else if (nameofobj == "dynamite"){
 			QuestionDialogue.Instance.ShowQuestion("A: Perhaps we can go more slowly, digging each level carefully in order to  preserve as much material as possible.  \n B: Use dynamite to reach the correct level as quickly and efficiently as possible. \n C: The stratigraphic levels are often not so clear. You can probably excavate two-three levels at once without much issue,  and we can always go back if something looks particularly interesting.",
 			 () => {Debug.Log("5 Punkte"); 
-			 		Debug.Log("EXPLOSION");
+			 		FindObjectOfType<ObjToggleTroy>().DeactivateBackground();
 					FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();}, 
 			 () => {Debug.Log("10 Punkte"); 
-			 		Debug.Log("EXPLOSION");
+			 		FindObjectOfType<ObjToggleTroy>().DeactivateBackground();
 					FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();}, 
 			 () => {Debug.Log("0 Punkte"); 
-			 		Debug.Log("EXPLOSION");
+			 		FindObjectOfType<ObjToggleTroy>().DeactivateBackground();
 					FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();});
 		} else if (nameofobj == "SchliemannT" && counter == 5){
 			FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
@@ -126,6 +123,7 @@ public class clickcontrol : MonoBehaviour {
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 			counter++; //jetzt 8
 		} else if (nameofobj == "diadem"){
+			FindObjectOfType<ObjToggleTroy>().SwapSchliemann();
 			dialogue.Clear();
 			dialogue.Enqueue("Ah, thank you!");
 			dialogue.Enqueue("The findings, especially the very fancy gold ones, are the most important goal of the excavation. Correct?");

@@ -18,6 +18,9 @@ public class ObjToggleTroy : MonoBehaviour
     public GameObject plain; 
     public GameObject dynamite; 
     public GameObject schliemann;
+    public GameObject schliemannD;
+    public GameObject background;
+
 
     private Color homerColor;
     private Color sherdColor;
@@ -31,6 +34,15 @@ public class ObjToggleTroy : MonoBehaviour
 
     public void DeactivateSchliemann(){
         schliemann.GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    public void SwapSchliemann(){
+        schliemann.GetComponent<SpriteRenderer>().enabled = false;
+        schliemannD.SetActive(true);
+    }
+
+    public void DeactivateBackground(){
+        background.SetActive(false);
     }
     
     public void ActivateHomer(){
