@@ -20,6 +20,7 @@ public class DialogueTroy : MonoBehaviour {
 	}
 	
 	void OnMouseDown() {
+		FindObjectOfType<SoundEffects>().playClick();
 		nameofobj = gameObject.name;
 		Debug.Log (nameofobj);
 		TriggerDialogue();
@@ -192,6 +193,7 @@ public class DialogueTroy : MonoBehaviour {
 		} else if (nameofobj == "SchliemannT" && counter == 7){
 			FindObjectOfType<ObjToggleTroy>().ActivateDynamite();
 		} else if (nameofobj == "dynamite" && counter == 7){
+			FindObjectOfType<SoundEffects>().playExplosion();
 		 	FindObjectOfType<ObjToggleTroy>().DeactivateBackground();
 			FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();
 		} else if (nameofobj == "SchliemannT" && counter == 8){

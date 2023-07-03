@@ -20,6 +20,7 @@ public class DialogueMycenae : MonoBehaviour {
 	}
 	
 	void OnMouseDown() {
+		FindObjectOfType<SoundEffects>().playClick();
 		nameofobj = gameObject.name;
 		Debug.Log (nameofobj);
 		TriggerDialogue();
