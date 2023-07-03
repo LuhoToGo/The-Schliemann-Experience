@@ -81,8 +81,10 @@ public class DialogueManager : MonoBehaviour
 
         if(sceneName == "Troy"){
             FindObjectOfType<DialogueTroy>().postDialogue();
-        } else if (sceneName == "Mycenae"){
+        } else if (sceneName == "mycenae"){
             FindObjectOfType<DialogueMycenae>().postDialogue();
+        } else {
+            Debug.Log("Falsche Scene");
         }
     }
 
