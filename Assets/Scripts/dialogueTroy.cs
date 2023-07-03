@@ -48,7 +48,7 @@ public class DialogueTroy : MonoBehaviour {
 		if (nameofobj == "SchliemannT" && counter == 0){
 			FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
 			dialogue.Clear();
-			dialogue.Enqueue("Hello *name* It’s nice you’re here.");
+			dialogue.Enqueue("Hello [Player]. It’s nice you’re here.");
 			dialogue.Enqueue("There is a lot to do, to be successful and show all those Academic naysayers I was right all along...");
 			dialogue.Enqueue("Welcome to Turkey!");
 			dialogue.Enqueue("I firmly believe in the historicity of the Homeric epics and therefore believe Troy is an actual place.");
@@ -57,14 +57,16 @@ public class DialogueTroy : MonoBehaviour {
 		} else if (nameofobj == "homer") {
 			QuestionDialogue.Instance.ShowQuestion("A: Yes of course we can find Troy based on evidence in the Iliad. \n B: We must be careful because the Homeric epics are works of fiction composed some 500 years after the events its supposed to describe. It is unlikely they are accurate or useful. \n C: The homeric epics may offer some useful information but we should consider using other sources as well.",
 			 () => {Debug.Log("10 Punkte");
+			 		ScoreManager.instance.AddScore(10); // AddScore-Methode des ScoreManagers wird aufgerufen, um 10 Punkte zum Gesamtscore hinzuzufuegen
 			 		dialogue.Clear();
 					dialogue.Enqueue("I am proud of your confidence and that you always see success ahead. That's the path we’re taking.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
-			 () => {Debug.Log("Keine Punkte");
+			 () => {Debug.Log("0 Punkte");
 			 		dialogue.Clear();
 					dialogue.Enqueue("I don't really support that decision. Fortunately, you are only my assistant, and I still have the decision-making power.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("5 Punkte");
+			 		ScoreManager.instance.AddScore(5); // AddScore-Methode des ScoreManagers wird aufgerufen, um 5 Punkte zum Gesamtscore hinzuzufuegen
 			 		dialogue.Clear();
 					dialogue.Enqueue("I don't really support that decision. Fortunately, you are only my assistant, and I still have the decision-making power.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
@@ -95,11 +97,13 @@ public class DialogueTroy : MonoBehaviour {
 					dialogue.Enqueue("Don't be so hesitant. That way you won't become a great archaeologist like me.");
 					dialogue.Enqueue("Just listen to me, I know my stuff.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
-			 () => {Debug.Log("10 Punkte"); 
+			 () => {Debug.Log("10 Punkte");
+			 		ScoreManager.instance.AddScore(10);
 					dialogue.Clear();
 					dialogue.Enqueue("That's what I call effectiveness!");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
-			 () => {Debug.Log("5 Punkte"); 
+			 () => {Debug.Log("5 Punkte");
+			 		ScoreManager.instance.AddScore(5);
 					dialogue.Clear();
 					dialogue.Enqueue("Don't be so hesitant. That way you won't become a great archaeologist like me.");
 					dialogue.Enqueue("Just listen to me, I know my stuff.");
@@ -114,7 +118,7 @@ public class DialogueTroy : MonoBehaviour {
 		} else if (nameofobj == "shard"){
 			dialogue.Clear();
 			dialogue.Enqueue("These shards look very lame, I don’t think we should keep them.");
-			dialogue.Enqueue("Do you agree *name*?");
+			dialogue.Enqueue("Do you agree, [Player]?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 		} else if (nameofobj == "SchliemannT" && counter == 9){
 			FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
@@ -139,10 +143,10 @@ public class DialogueTroy : MonoBehaviour {
 	public void postDialogue(){ //wird nach jedem Dialog aufgerufen
 		if (nameofobj == "SchliemannT" && counter == 0){
 			dialogue.Clear();
-			dialogue.Enqueue("Hi *name*, here I am already!");
+			dialogue.Enqueue("Hi [Player], here I am already!");
 			dialogue.Enqueue("Just some quick sidenote:");
 			dialogue.Enqueue("Even though this is still an exam in my class, and I want you to do great obviously, this experience is about being the best assistant to Schliemann as possible");
-			dialogue.Enqueue("So try choosing the answers he choose back then, and not the ones we learned about in class. ;)");
+			dialogue.Enqueue("So try choosing the answers he chose back then, and not the ones we learned about in class. ;)");
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
 			counter++; //jetzt 1
 		} else if (nameofobj == "SchliemannT" && counter == 1) {
@@ -160,22 +164,24 @@ public class DialogueTroy : MonoBehaviour {
 			FindObjectOfType<ObjToggleTroy>().ActivatePlain();
 		} else if (nameofobj == "plain" && counter == 4){
 			QuestionDialogue.Instance.ShowQuestion("A: Νo, We should give full credit to all our colleagues and put the artefacts in a museum for everyone to enjoy. \n B: Agreed! We will get more attention and funding that way. One great man making a great discovery! \n C: Perhaps we can give Frank  a footnote?",
-			 () => {Debug.Log("Keine Punkte");
+			 () => {Debug.Log("0 Punkte");
 			 		dialogue.Clear();
 					dialogue.Enqueue("Oh, you are too selfless. I will show you how to do it.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("10 Punkte");
+			 		ScoreManager.instance.AddScore(10);
 			 		dialogue.Clear();
 					dialogue.Enqueue("I really like how you are starting to think like I do.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("5 Punkte");
+			 		ScoreManager.instance.AddScore(5);
 			 		dialogue.Clear();
 					dialogue.Enqueue("Oh, you are too selfless. I will show you how to do it.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
 			counter++; //jetzt 5
 		} else if (nameofobj == "plain" && counter == 5){
 			dialogue.Clear();
-			dialogue.Enqueue("Hey *name* Some additional information for you on that:");
+			dialogue.Enqueue("Hey [Player]! Some additional information for you on that:");
 			dialogue.Enqueue("Schliemann was actually digging at a site called Pinarbasi and not finding anything and was about to give up.");
 			dialogue.Enqueue("His colleague Frank Calvert, who owned part of the mound called Hisarlik advised him to try digging at his mound.");
 			dialogue.Enqueue("This is where 'Troy' turned out to be.");
@@ -197,10 +203,12 @@ public class DialogueTroy : MonoBehaviour {
 					dialogue.Enqueue("You know what? Put them away anyway, I don't want to see these shards anymore during this dig.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("5 Punkte");
+			 		ScoreManager.instance.AddScore(5);
 			 		dialogue.Clear();
 					dialogue.Enqueue("You know what? Put them away anyway, I don't want to see these shards anymore during this dig.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("10 Punkte");
+			 		ScoreManager.instance.AddScore(10);
 			 		dialogue.Clear();
 					dialogue.Enqueue("You're right, we should get rid of the junk, it doesn't look very promising.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
@@ -212,10 +220,12 @@ public class DialogueTroy : MonoBehaviour {
 		} else if (nameofobj == "diadem" && counter == 10){
 			QuestionDialogue.Instance.ShowQuestion("A: Absolutely! It gets the most attention. We should give it an inaccurate name to sell more newspapers and have your wife model it  \n B: Νo, the findings alone is not the only goal. The archaeological context matters. Have we even checked if this is from the time we claim it is. \n C: The gold findings are not the only important items, the media might like them but Museums and fellow archaeologists  are interested in more than that. Have you included these other aspects in your reports Dr. Schliemann?",
 			 () => {Debug.Log("10 Punkte");
+			 		ScoreManager.instance.AddScore(10);
 					dialogue.Clear();
 					dialogue.Enqueue("That’s it! That’s what we are doing.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("5 Punkte");
+			 		ScoreManager.instance.AddScore(5);
 			 		dialogue.Clear();
 					dialogue.Enqueue("You’re always talking about context and morality… Boooring!");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
@@ -226,7 +236,7 @@ public class DialogueTroy : MonoBehaviour {
 			counter++; // jetzt 11
 		} else if (nameofobj == "diadem" && counter == 11){
 			dialogue.Clear();
-			dialogue.Enqueue("*name*, you may be interested to know that The 'Treasure of Priam', which the diadem you see was part, was uncovered as during Schliemann's initial excavations.");
+			dialogue.Enqueue("[Player], you may be interested to know that The 'Treasure of Priam', which the diadem you see was part, was uncovered as during Schliemann's initial excavations.");
 			dialogue.Enqueue("It wasn't until Carl Blagen excavated at the site (1932-1938) that the stratigraphy was established and revealed the treasure dated to Troy II (2550-2300) and not Troy VII (1300-1050) when Priam, if he existed, would have ruled the city.");
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
 			counter++; //jetzt 12
@@ -241,4 +251,3 @@ public class DialogueTroy : MonoBehaviour {
 
 	}
 }
-

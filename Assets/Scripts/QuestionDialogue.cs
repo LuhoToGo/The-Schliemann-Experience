@@ -34,14 +34,20 @@ public class QuestionDialogue : MonoBehaviour {
         gameObject.SetActive(true);
 
         textMeshPro.text = questionText;
+
+        buttonA.onClick.RemoveAllListeners();
         buttonA.onClick.AddListener(() => {
             Hide();
             actionA();
         });
+
+        buttonB.onClick.RemoveAllListeners();
         buttonB.onClick.AddListener(() => {
             Hide();
             actionB();
         });
+
+        buttonC.onClick.RemoveAllListeners();
         buttonC.onClick.AddListener(() => {
             Hide();
             actionC();

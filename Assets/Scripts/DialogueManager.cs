@@ -58,6 +58,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence (string sentence) {
         dialogueText.text = "";
+        sentence = sentence.Replace("[Player]", PlayerName.playerName);
         foreach (char letter in sentence.ToCharArray()){
             dialogueText.text += letter;
             yield return new WaitForSeconds(textSpeed);
@@ -66,6 +67,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentenceAssistant (string sentence) {
         dialogueAssistantText.text = "";
+        sentence = sentence.Replace("[Player]", PlayerName.playerName);
         foreach (char letter in sentence.ToCharArray()){
             dialogueAssistantText.text += letter;
             yield return new WaitForSeconds(textSpeed);
