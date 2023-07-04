@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     public Animator animatorAssistant;
     private Queue<string> sentences;
     private bool assistant;
+    private int temp;
     private string sceneName;
 
     void Start()
@@ -29,6 +30,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", true);
         sentences = dialogue;
         assistant = false;
+        temp = sentences.Count;
         DisplayNextSentence();
     }
 
@@ -36,10 +38,15 @@ public class DialogueManager : MonoBehaviour
         animatorAssistant.SetBool("IsOpen", true);
         sentences = dialogue;
         assistant = true;
+        temp = sentences.Count;
         DisplayNextSentence();
     }
 
     public void DisplayNextSentence(){
+        if (temp != sentences.Count){
+        FindObjectOfType<SoundEffects>().playClickText();
+        }
+
         if (sentences.Count == 0){
             EndDialogue();
             return;
@@ -81,8 +88,10 @@ public class DialogueManager : MonoBehaviour
 
         if(sceneName == "Troy"){
             FindObjectOfType<DialogueTroy>().postDialogue();
-        } else if (sceneName == "Mycenae"){
+        } else if (sceneName == "mycenae"){
             FindObjectOfType<DialogueMycenae>().postDialogue();
+        } else {
+            Debug.Log("Falsche Scene");
         }
     }
 

@@ -30,7 +30,7 @@ public class NameInput : MonoBehaviour
             Debug.Log("Player's name set to: " + PlayerName.playerName);
             startButton.gameObject.SetActive(true);  // Start-Button wird aktiv
             nameInputField.gameObject.SetActive(false);  // Input-Feld verschwindet
-            greetingText.text = "Hello, " + PlayerName.playerName + "!";  // Begruessung wird gesetzt
+            greetingText.text = "Hello " + PlayerName.playerName;  // Begruessung wird gesetzt
             greetingText.gameObject.SetActive(true);  // Begruessung wird sichtbar gemacht
         }
     }
