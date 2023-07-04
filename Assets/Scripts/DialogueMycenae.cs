@@ -213,7 +213,7 @@ public class DialogueMycenae : MonoBehaviour {
 			 () => {Debug.Log("10 Punkte");
 			 		ScoreManager.instance.AddScore(10);
 			 		dialogue.Clear();
-					dialogue.Enqueue("Exactly my opinion! I really liked working with you *name*. See you when the opportunity arises.");
+					dialogue.Enqueue("Exactly my opinion! I really liked working with you [Player]. See you when the opportunity arises.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("5 Punkte");
 			 		ScoreManager.instance.AddScore(5);
@@ -226,10 +226,7 @@ public class DialogueMycenae : MonoBehaviour {
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
 			counter++; //jetzt 11
 		} else if (nameofobj == "EoE" && counter == 11) {
-			QuestionDialogue.Instance.ShowQuestion("A: Replay Troy \n \n B: Quit to Main Menu \n \n C: Quit the Game",
-			 () => {SceneManager.LoadScene(1);}, 
-			 () => {SceneManager.LoadScene(0);}, 
-			 () => {Application.Quit();});
+			Initiate.Fade("Epilogue", Color.black, 1.0f); 
 		} else {
 			Debug.Log("Keine Reaktion hinterlegt");
 		}

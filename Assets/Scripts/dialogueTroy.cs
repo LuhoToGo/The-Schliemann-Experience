@@ -243,8 +243,8 @@ public class DialogueTroy : MonoBehaviour {
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
 			counter++; //jetzt 12
 		} else if (nameofobj == "diadem" && counter == 12){
-			QuestionDialogue.Instance.ShowQuestion("A: Continue with Mycanae \n \n B: Quit to Main Menu \n \n C: Quit the Game",
-			 () => {SceneManager.LoadScene(2);}, 
+			QuestionDialogue.Instance.ShowQuestion("A: Continue with Mycenae \n \n B: Quit to Main Menu \n \n C: Quit the Game",
+			 () => {Initiate.Fade("Mycenae", Color.black, 1.0f);}, 
 			 () => {SceneManager.LoadScene(0);}, 
 			 () => {Application.Quit();});
 		} else {

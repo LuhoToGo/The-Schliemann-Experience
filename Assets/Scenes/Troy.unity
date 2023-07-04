@@ -734,7 +734,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5876b04ba7ea746baadd456a0d44fbb4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.721
+  m_Volume: 0.742
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1220,7 +1220,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 20b7cedd767254fbe8cbd782cc70a2bb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.721
+  m_Volume: 0.891
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2327,7 +2327,7 @@ MonoBehaviour:
   m_text: lorem ipsum dolor sit amet
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4569,7 +4569,7 @@ MonoBehaviour:
   m_text: lorem ipsum dolor sit amet
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
