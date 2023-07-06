@@ -37,21 +37,29 @@ public class QuestionDialogue : MonoBehaviour {
 
         buttonA.onClick.RemoveAllListeners();
         buttonA.onClick.AddListener(() => {
+
             FindObjectOfType<SoundEffects>().playClick();
+
+
             Hide();
             actionA();
         });
 
         buttonB.onClick.RemoveAllListeners();
         buttonB.onClick.AddListener(() => {
+
             FindObjectOfType<SoundEffects>().playClick();
+
+
             Hide();
             actionB();
         });
 
         buttonC.onClick.RemoveAllListeners();
         buttonC.onClick.AddListener(() => {
+
             FindObjectOfType<SoundEffects>().playClick();
+
             Hide();
             actionC();
         });
