@@ -112,13 +112,13 @@ public class DialogueTroy : MonoBehaviour {
 		} else if (nameofobj == "SchliemannT" && counter == 7){
 			FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
 			dialogue.Clear();
-			dialogue.Enqueue("With all this hard work we found some shards.");
+			dialogue.Enqueue("With all this hard work we found some sherds.");
 			dialogue.Enqueue("Can you bring them to me, please?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 			counter++; //jetzt 8
 		} else if (nameofobj == "shard"){
 			dialogue.Clear();
-			dialogue.Enqueue("These shards look very lame, I don’t think we should keep them.");
+			dialogue.Enqueue("These sherds look very lame, I don’t think we should keep them.");
 			dialogue.Enqueue("Do you agree, [Player]?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 		} else if (nameofobj == "SchliemannT" && counter == 9){
@@ -199,15 +199,15 @@ public class DialogueTroy : MonoBehaviour {
 		} else if (nameofobj == "SchliemannT" && counter == 8){
 			FindObjectOfType<ObjToggleTroy>().ActivateShard();
 		} else if (nameofobj == "shard" && counter == 8){
-			QuestionDialogue.Instance.ShowQuestion("A: All information matters, and we should be as detailed in our collection as  possible. It could be useful for another project \n \n B: Keep only the significant ones, like bases, lips, handles or painted shards which are diagnostic. We can throw the rest away. \n \n C: Yes, lets just throw it out. Who really cares about lamp bowls and scraps. There is way too many anyway.",
+			QuestionDialogue.Instance.ShowQuestion("A: All information matters, and we should be as detailed in our collection as  possible. It could be useful for another project \n \n B: Keep only the significant ones, like bases, lips, handles or painted sherds which are diagnostic. We can throw the rest away. \n \n C: Yes, lets just throw it out. Who really cares about lamp bowls and scraps. There is way too many anyway.",
 			 () => {Debug.Log("0 Punkte");
 			 		dialogue.Clear();
-					dialogue.Enqueue("You know what? Put them away anyway, I don't want to see these shards anymore during this dig.");
+					dialogue.Enqueue("You know what? Put them away anyway, I don't want to see these sherds anymore during this dig.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("5 Punkte");
 			 		ScoreManager.instance.AddScore(5);
 			 		dialogue.Clear();
-					dialogue.Enqueue("You know what? Put them away anyway, I don't want to see these shards anymore during this dig.");
+					dialogue.Enqueue("You know what? Put them away anyway, I don't want to see these sherds anymore during this dig.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("10 Punkte");
 			 		ScoreManager.instance.AddScore(10);

@@ -19,11 +19,11 @@ public class ObjToggleMycenae : MonoBehaviour
     public GameObject eoe; 
     public GameObject schliemann;
 
-    private Color maskColor;
-    private Color diaryColor;
-    private Color potteryColor;
-    private Color permissionColor;
-    private Color eoeColor;
+    //private Color maskColor;
+    //private Color diaryColor;
+    //private Color potteryColor;
+    //private Color permissionColor;
+    //private Color eoeColor;
     
     public void ActivateSchliemann(){
         schliemann.GetComponent<BoxCollider2D>().enabled = true;
@@ -35,56 +35,56 @@ public class ObjToggleMycenae : MonoBehaviour
     
     public void ActivateMask(){
         mask.GetComponent<BoxCollider2D>().enabled = true;
-        mask.GetComponent<Renderer>().material.color = maskColor;
+        //mask.GetComponent<Renderer>().material.color = maskColor;
     }
 
     public void DeactivateMask(){
         mask.GetComponent<BoxCollider2D>().enabled = false;
-        maskColor = mask.GetComponent<Renderer>().material.color;
-    	mask.GetComponent<Renderer>().material.color = Color.grey;
+        //maskColor = mask.GetComponent<Renderer>().material.color;
+    	//mask.GetComponent<Renderer>().material.color = Color.grey;
     }
 
     public void ActivateDiary(){
         diary.GetComponent<BoxCollider2D>().enabled = true;
-        diary.GetComponent<Renderer>().material.color = diaryColor;
+        //diary.GetComponent<Renderer>().material.color = diaryColor;
     }
 
     public void DeactivateDiary(){
         diary.GetComponent<BoxCollider2D>().enabled = false;
-        diaryColor = diary.GetComponent<Renderer>().material.color;
-    	diary.GetComponent<Renderer>().material.color = Color.grey;
+        //diaryColor = diary.GetComponent<Renderer>().material.color;
+    	//diary.GetComponent<Renderer>().material.color = Color.grey;
     }
 
     public void ActivatePottery(){
         pottery.GetComponent<BoxCollider2D>().enabled = true;
-        pottery.GetComponent<Renderer>().material.color = potteryColor;
+        //pottery.GetComponent<Renderer>().material.color = potteryColor;
     }
 
     public void DeactivatePottery(){
         pottery.GetComponent<BoxCollider2D>().enabled = false;
-        potteryColor = pottery.GetComponent<Renderer>().material.color;
-    	pottery.GetComponent<Renderer>().material.color = Color.grey;
+        //potteryColor = pottery.GetComponent<Renderer>().material.color;
+    	//pottery.GetComponent<Renderer>().material.color = Color.grey;
     }
 
     public void ActivatePermission(){
         permission.GetComponent<BoxCollider2D>().enabled = true;
-        permission.GetComponent<Renderer>().material.color = permissionColor;
+        //permission.GetComponent<Renderer>().material.color = permissionColor;
     }
 
     public void DeactivatePermission(){
         permission.GetComponent<BoxCollider2D>().enabled = false;
-        permissionColor = permission.GetComponent<Renderer>().material.color;
-    	permission.GetComponent<Renderer>().material.color = Color.grey;
+        //permissionColor = permission.GetComponent<Renderer>().material.color;
+    	//permission.GetComponent<Renderer>().material.color = Color.grey;
     }
 
     public void ActivateEoe(){
         eoe.GetComponent<BoxCollider2D>().enabled = true;
-        eoe.GetComponent<Renderer>().material.color = eoeColor;
+        //eoe.GetComponent<Renderer>().material.color = eoeColor;
     }
 
     public void DeactivateEoe(){
         eoe.GetComponent<BoxCollider2D>().enabled = false;
-        eoeColor = eoe.GetComponent<Renderer>().material.color;
-    	eoe.GetComponent<Renderer>().material.color = Color.grey;
+        //eoeColor = eoe.GetComponent<Renderer>().material.color;
+    	//eoe.GetComponent<Renderer>().material.color = Color.grey;
     }
 }
