@@ -917,7 +917,6 @@ GameObject:
   m_Component:
   - component: {fileID: 162878963}
   - component: {fileID: 162878965}
-  - component: {fileID: 162878964}
   m_Layer: 5
   m_Name: ScoreSlider
   m_TagString: Untagged
@@ -948,19 +947,6 @@ RectTransform:
   m_AnchoredPosition: {x: 158, y: -30}
   m_SizeDelta: {x: 280, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &162878964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 162878962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb2a35fc8610e3c40af12cf085959231, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreSlider: {fileID: 162878965}
 --- !u!114 &162878965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,9 +969,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1006,7 +992,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 978418416}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 50
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -1138,7 +1124,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &232298961
 GameObject:
@@ -1266,7 +1252,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &295418823
 GameObject:
@@ -1529,7 +1515,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &392241668
 GameObject:
@@ -1772,7 +1758,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &561063027
 GameObject:
@@ -2563,7 +2549,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &965459342
 GameObject:
@@ -2678,6 +2664,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978418415}
   m_CullTransparentMesh: 1
+--- !u!1 &1022603442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1022603444}
+  - component: {fileID: 1022603443}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1022603443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022603442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2a35fc8610e3c40af12cf085959231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreSlider: {fileID: 162878965}
+--- !u!4 &1022603444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022603442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1053235908
 GameObject:
   m_ObjectHideFlags: 0
@@ -3211,7 +3242,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 90bd544ed17e8ed4f8dac65042eaf081, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3309,7 +3340,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1304226656
 GameObject:
@@ -3617,7 +3648,7 @@ RectTransform:
   - {fileID: 747039007}
   - {fileID: 1053235912}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3652,7 +3683,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2fb9440ddec77a140a809a695726c6d2, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3750,7 +3781,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1564537196
 GameObject:

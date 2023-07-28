@@ -16,6 +16,8 @@ public class DialogueTroy : MonoBehaviour {
 
 
 	void Start () {
+		ScoreManager.instance.FindScoreSlider(); // Richtige Referenz zum Slider wird gesucht
+		ScoreManager.instance.ResetScore(); // Punktestand wird zurueckgesetzt
 		dialogue = new Queue<string>();
 	}
 	
