@@ -13,7 +13,6 @@ using UnityEngine;
 //Toggle über einen Bool zu machen ist aber hier auch nicht viel schoener.
 public class ObjToggleTroy : MonoBehaviour
 {
-    
     //Gameplay Objects
     public GameObject homer; 
     public GameObject shard; 
@@ -25,6 +24,8 @@ public class ObjToggleTroy : MonoBehaviour
     public GameObject background;
 
     //Artwork Showcase Objects
+    public Animator homerAn;
+    public Animator shardAn;
     public GameObject homerA; 
     public GameObject shardA; 
     public GameObject diademA; 
@@ -58,11 +59,11 @@ public class ObjToggleTroy : MonoBehaviour
     }
 
     public void ActivateHomerA(){
-        homerA.SetActive(true);
+        homerAn.SetBool("IsOpen", true);
     }
 
     public void DeactivateHomerA(){
-        homerA.SetActive(false);
+        homerAn.SetBool("IsOpen", false);
     }
 
     public void ActivateShard(){
@@ -74,11 +75,11 @@ public class ObjToggleTroy : MonoBehaviour
     }
 
     public void ActivateShardA(){
-        shardA.SetActive(true);
+        shardAn.SetBool("IsOpen", true);
     }
 
     public void DeactivateShardA(){
-        shardA.SetActive(false);
+        shardAn.SetBool("IsOpen", false);
     }
 
     public void ActivateDiadem(){

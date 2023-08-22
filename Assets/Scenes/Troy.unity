@@ -1202,13 +1202,14 @@ GameObject:
   - component: {fileID: 252107208}
   - component: {fileID: 252107210}
   - component: {fileID: 252107209}
+  - component: {fileID: 252107211}
   m_Layer: 0
   m_Name: homerA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &252107208
 Transform:
   m_ObjectHideFlags: 0
@@ -1216,14 +1217,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252107207}
-  m_LocalRotation: {x: -0.0015747794, y: 0.00001140268, z: 0.007240613, w: -0.9999726}
-  m_LocalPosition: {x: -0.27, y: -0.93, z: 0}
-  m_LocalScale: {x: 1.9390543, y: 1.9390544, z: 1.8183508}
+  m_LocalRotation: {x: -0.0015462376, y: 0.0002986799, z: 0.029274104, w: -0.99957025}
+  m_LocalPosition: {x: -0.74, y: -0.95, z: 0}
+  m_LocalScale: {x: 1.5648464, y: 1.564846, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1223639723}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0.18, y: -0.003, z: -0.83}
+  m_LocalEulerAnglesHint: {x: 0.176, y: -0.039, z: -3.355}
 --- !u!114 &252107209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1280,7 +1281,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: d677731e4d0bc404aa192e4caf5838ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1292,6 +1293,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &252107211
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252107207}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5d11f158697709e40b3346e0261d5ffa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &283368157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,7 +1691,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -4
   m_Sprite: {fileID: 21300000, guid: a0bdfbaf42f14b14ab915997dc6cf14c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1854,7 +1876,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -4
   m_Sprite: {fileID: 21300000, guid: 53c34a4f6abea6446a62aaa0f6c16ce1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2588,6 +2610,8 @@ MonoBehaviour:
   schliemann: {fileID: 1408239592}
   schliemannD: {fileID: 395020963}
   background: {fileID: 1915600265}
+  homerAn: {fileID: 252107211}
+  shardAn: {fileID: 2143879803}
   homerA: {fileID: 252107207}
   shardA: {fileID: 2143879799}
   diademA: {fileID: 509483398}
@@ -3521,7 +3545,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -4
   m_Sprite: {fileID: 21300000, guid: e4185431862b4034ab8dc960e0bdad4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5229,6 +5253,7 @@ GameObject:
   - component: {fileID: 2091638628}
   - component: {fileID: 2091638627}
   - component: {fileID: 2091638626}
+  - component: {fileID: 2091638630}
   m_Layer: 0
   m_Name: homer
   m_TagString: Untagged
@@ -5345,6 +5370,27 @@ Transform:
   m_Father: {fileID: 747039007}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0.16, y: -0.084, z: -27.704}
+--- !u!95 &2091638630
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091638625}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b29100f44b593f8458bc8d5a40b35738, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2115688407
 GameObject:
   m_ObjectHideFlags: 0
@@ -5491,13 +5537,14 @@ GameObject:
   - component: {fileID: 2143879800}
   - component: {fileID: 2143879802}
   - component: {fileID: 2143879801}
+  - component: {fileID: 2143879803}
   m_Layer: 0
   m_Name: shardA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2143879800
 Transform:
   m_ObjectHideFlags: 0
@@ -5506,8 +5553,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143879799}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.23, y: -0.4, z: 0}
-  m_LocalScale: {x: 0.8758585, y: 0.8758585, z: 0}
+  m_LocalPosition: {x: -0.01, y: -0.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1223639723}
@@ -5569,7 +5616,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 2021fb37c12973f47ab1da455bc03e9c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5581,3 +5628,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2143879803
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143879799}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 93b62ea0e045adc47a8b899281ebfe31, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
