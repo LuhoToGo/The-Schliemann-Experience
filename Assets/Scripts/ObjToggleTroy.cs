@@ -10,6 +10,10 @@ using UnityEngine;
 
 
 //Das ist wahnsinnig unschoen, aber funktioniert erstmal. Ich glaub ich hab Migraene.
+<<<<<<< Updated upstream
+=======
+//Toggle ueber einen Bool zu machen ist aber hier auch nicht viel schoener.
+>>>>>>> Stashed changes
 public class ObjToggleTroy : MonoBehaviour
 {
     public GameObject homer; 
@@ -21,6 +25,7 @@ public class ObjToggleTroy : MonoBehaviour
     public GameObject schliemannD;
     public GameObject background;
 
+<<<<<<< Updated upstream
 
     //private Color homerColor;
     //private Color shardColor;
@@ -28,6 +33,16 @@ public class ObjToggleTroy : MonoBehaviour
     //private Color plainColor;
     //private Color dynamiteColor;
     
+=======
+    //Artwork Showcase Objects
+    public Animator homerAn;
+    public Animator shardAn;
+    public Animator diademAn;
+    public Animator plainAn;
+    public Animator dynamiteAn;
+
+
+>>>>>>> Stashed changes
     public void ActivateSchliemann(){
         schliemann.GetComponent<BoxCollider2D>().enabled = true;
     }
@@ -74,8 +89,19 @@ public class ObjToggleTroy : MonoBehaviour
 
     public void DeactivateDiadem(){
         diadem.GetComponent<BoxCollider2D>().enabled = false;
+<<<<<<< Updated upstream
         //diademColor = diadem.GetComponent<Renderer>().material.color;
     	//diadem.GetComponent<Renderer>().material.color = Color.grey;
+=======
+    }
+
+    public void ActivateDiademA(){
+        diademAn.SetBool("IsOpen", true);
+    }
+
+    public void DeactivateDiademA(){
+        diademAn.SetBool("IsOpen", false);
+>>>>>>> Stashed changes
     }
 
     public void ActivatePlain(){
@@ -85,8 +111,19 @@ public class ObjToggleTroy : MonoBehaviour
 
     public void DeactivatePlain(){
         plain.GetComponent<BoxCollider2D>().enabled = false;
+<<<<<<< Updated upstream
         //plainColor = plain.GetComponent<Renderer>().material.color;
     	//plain.GetComponent<Renderer>().material.color = Color.grey;
+=======
+    }
+
+    public void ActivatePlainA(){
+        plainAn.SetBool("IsOpen", true);
+    }
+
+    public void DeactivatePlainA(){
+        plainAn.SetBool("IsOpen", false);
+>>>>>>> Stashed changes
     }
 
     public void ActivateDynamite(){
@@ -96,7 +133,18 @@ public class ObjToggleTroy : MonoBehaviour
 
     public void DeactivateDynamite(){
         dynamite.GetComponent<BoxCollider2D>().enabled = false;
+<<<<<<< Updated upstream
         //dynamiteColor = dynamite.GetComponent<Renderer>().material.color;
     	//dynamite.GetComponent<Renderer>().material.color = Color.grey;
+=======
+    }
+
+    public void ActivateDynamiteA(){
+        dynamiteAn.SetBool("IsOpen", true);
+    }
+
+    public void DeactivateDynamiteA(){
+        dynamiteAn.SetBool("IsOpen", false);
+>>>>>>> Stashed changes
     }
 }

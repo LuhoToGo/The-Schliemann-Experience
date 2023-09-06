@@ -19,12 +19,24 @@ public class ObjToggleMycenae : MonoBehaviour
     public GameObject eoe; 
     public GameObject schliemann;
 
+<<<<<<< Updated upstream
     //private Color maskColor;
     //private Color diaryColor;
     //private Color potteryColor;
     //private Color permissionColor;
     //private Color eoeColor;
     
+=======
+
+    //Artwork Showcase Objects
+    public Animator maskAn;
+    public Animator diaryAn;
+    public Animator potteryAn;
+    public Animator permissionAn;
+    public Animator eoeAn;
+
+
+>>>>>>> Stashed changes
     public void ActivateSchliemann(){
         schliemann.GetComponent<BoxCollider2D>().enabled = true;
     }
@@ -40,8 +52,19 @@ public class ObjToggleMycenae : MonoBehaviour
 
     public void DeactivateMask(){
         mask.GetComponent<BoxCollider2D>().enabled = false;
+<<<<<<< Updated upstream
         //maskColor = mask.GetComponent<Renderer>().material.color;
     	//mask.GetComponent<Renderer>().material.color = Color.grey;
+=======
+    }
+
+    public void ActivateMaskA(){
+        maskAn.SetBool("IsOpen", true);
+    }
+
+    public void DeactivateMaskA(){
+        maskAn.SetBool("IsOpen", false);
+>>>>>>> Stashed changes
     }
 
     public void ActivateDiary(){
@@ -51,8 +74,19 @@ public class ObjToggleMycenae : MonoBehaviour
 
     public void DeactivateDiary(){
         diary.GetComponent<BoxCollider2D>().enabled = false;
+<<<<<<< Updated upstream
         //diaryColor = diary.GetComponent<Renderer>().material.color;
     	//diary.GetComponent<Renderer>().material.color = Color.grey;
+=======
+    }
+
+    public void ActivateDiaryA(){
+        diaryAn.SetBool("IsOpen", true);
+    }
+
+    public void DeactivateDiaryA(){
+        diaryAn.SetBool("IsOpen", false);
+>>>>>>> Stashed changes
     }
 
     public void ActivatePottery(){
@@ -62,8 +96,19 @@ public class ObjToggleMycenae : MonoBehaviour
 
     public void DeactivatePottery(){
         pottery.GetComponent<BoxCollider2D>().enabled = false;
+<<<<<<< Updated upstream
         //potteryColor = pottery.GetComponent<Renderer>().material.color;
     	//pottery.GetComponent<Renderer>().material.color = Color.grey;
+=======
+    }
+
+    public void ActivatePotteryA(){
+        potteryAn.SetBool("IsOpen", true);
+    }
+
+    public void DeactivatePotteryA(){
+        potteryAn.SetBool("IsOpen", false);
+>>>>>>> Stashed changes
     }
 
     public void ActivatePermission(){
@@ -73,8 +118,19 @@ public class ObjToggleMycenae : MonoBehaviour
 
     public void DeactivatePermission(){
         permission.GetComponent<BoxCollider2D>().enabled = false;
+<<<<<<< Updated upstream
         //permissionColor = permission.GetComponent<Renderer>().material.color;
     	//permission.GetComponent<Renderer>().material.color = Color.grey;
+=======
+    }
+
+    public void ActivatePermissionA(){
+        permissionAn.SetBool("IsOpen", true);
+    }
+
+    public void DeactivatePermissionA(){
+        permissionAn.SetBool("IsOpen", false);
+>>>>>>> Stashed changes
     }
 
     public void ActivateEoe(){
@@ -84,7 +140,18 @@ public class ObjToggleMycenae : MonoBehaviour
 
     public void DeactivateEoe(){
         eoe.GetComponent<BoxCollider2D>().enabled = false;
+<<<<<<< Updated upstream
         //eoeColor = eoe.GetComponent<Renderer>().material.color;
     	//eoe.GetComponent<Renderer>().material.color = Color.grey;
+=======
+    }
+
+    public void ActivateEoeA(){
+        eoeAn.SetBool("IsOpen", true);
+    }
+
+    public void DeactivateEoeA(){
+        eoeAn.SetBool("IsOpen", false);
+>>>>>>> Stashed changes
     }
 }
