@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MainMenu.unity
+    guid: 76a9aa79e79f0b947b5a544ae8cc0815
+  - enabled: 1
+    path: Assets/Scenes/Prologue.unity
+    guid: 69141677ceee41b40bba209e2ab49551
+  - enabled: 1
+    path: Assets/Scenes/Troy.unity
+    guid: 9763346bbe750fe4da2d0211c3b0406e
+  - enabled: 1
+    path: Assets/Scenes/mycenae.unity
+    guid: 57c4c0ac2763f044c99f21a962a7abb1
+  - enabled: 1
+    path: Assets/Scenes/Epilogue.unity
+    guid: 6139a62416fca77458c438ef2d5de5ee
   m_configObjects: {}
