@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
+//testkommentar
 public class DialogueTroy : MonoBehaviour {
 
 	public static string nameofobj;
