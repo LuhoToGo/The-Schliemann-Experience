@@ -10,7 +10,7 @@ using UnityEngine;
 
 public class ObjToggleMycenae : MonoBehaviour
 {
-    
+
     //Gameplay Objects
     public GameObject mask; 
     public GameObject diary; 
@@ -21,12 +21,12 @@ public class ObjToggleMycenae : MonoBehaviour
 
 
     //Artwork Showcase Objects
+
     public Animator maskAn;
     public Animator diaryAn;
     public Animator potteryAn;
     public Animator permissionAn;
     public Animator eoeAn;
-
 
     public void ActivateSchliemann(){
         schliemann.GetComponent<BoxCollider2D>().enabled = true;
@@ -45,11 +45,13 @@ public class ObjToggleMycenae : MonoBehaviour
     }
 
     public void ActivateMaskA(){
+
         maskAn.SetBool("IsOpen", true);
     }
 
     public void DeactivateMaskA(){
         maskAn.SetBool("IsOpen", false);
+
     }
 
     public void ActivateDiary(){
@@ -61,11 +63,13 @@ public class ObjToggleMycenae : MonoBehaviour
     }
 
     public void ActivateDiaryA(){
+
         diaryAn.SetBool("IsOpen", true);
     }
 
     public void DeactivateDiaryA(){
         diaryAn.SetBool("IsOpen", false);
+
     }
 
     public void ActivatePottery(){
@@ -77,11 +81,13 @@ public class ObjToggleMycenae : MonoBehaviour
     }
 
     public void ActivatePotteryA(){
+
         potteryAn.SetBool("IsOpen", true);
     }
 
     public void DeactivatePotteryA(){
         potteryAn.SetBool("IsOpen", false);
+
     }
 
     public void ActivatePermission(){
@@ -93,11 +99,13 @@ public class ObjToggleMycenae : MonoBehaviour
     }
 
     public void ActivatePermissionA(){
+
         permissionAn.SetBool("IsOpen", true);
     }
 
     public void DeactivatePermissionA(){
         permissionAn.SetBool("IsOpen", false);
+
     }
 
     public void ActivateEoe(){
@@ -109,10 +117,12 @@ public class ObjToggleMycenae : MonoBehaviour
     }
 
     public void ActivateEoeA(){
+
         eoeAn.SetBool("IsOpen", true);
     }
 
     public void DeactivateEoeA(){
         eoeAn.SetBool("IsOpen", false);
+
     }
 }

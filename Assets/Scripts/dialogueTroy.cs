@@ -58,6 +58,7 @@ public class DialogueTroy : MonoBehaviour {
 			dialogue.Enqueue("I really hope you have the same opinion on that.");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 		} else if (nameofobj == "homer") {
+			FindObjectOfType<ObjToggleTroy>().ActivateHomerA();
 			QuestionDialogue.Instance.ShowQuestion("A: Yes of course we can find Troy based on evidence in the Iliad. \n \n B: We must be careful because the Homeric epics are works of fiction composed some 500 years after the events its supposed to describe. It is unlikely they are accurate or useful. \n \n C: The homeric epics may offer some useful information but we should consider using other sources as well.",
 			 () => {Debug.Log("10 Punkte");
 			 		ScoreManager.instance.AddScore(10); // AddScore-Methode des ScoreManagers wird aufgerufen, um 10 Punkte zum Gesamtscore hinzuzufuegen
@@ -71,7 +72,7 @@ public class DialogueTroy : MonoBehaviour {
 					dialogue.Enqueue("I don't really support that decision. Fortunately, you are only my assistant, and I still have the decision-making power.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("5 Punkte");
-			 		ScoreManager.instance.AddScore(5); // AddScore-Methode des ScoreManagers wird aufgerufen, um 5 Punkte zum Gesamtscore hinzuzufuegen
+					ScoreManager.instance.AddScore(5); // AddScore-Methode des ScoreManagers wird aufgerufen, um 5 Punkte zum Gesamtscore hinzuzufuegen
 					FindObjectOfType<SoundEffects>().playRight();
 			 		dialogue.Clear();
 					dialogue.Enqueue("I don't really support that decision. Fortunately, you are only my assistant, and I still have the decision-making power.");
@@ -84,6 +85,7 @@ public class DialogueTroy : MonoBehaviour {
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 			counter++; // jetzt 4
 		} else if (nameofobj == "plain"){
+			FindObjectOfType<ObjToggleTroy>().ActivatePlainA();
 			dialogue.Clear();
 			dialogue.Enqueue("By Jove! Frank may be right but I am very rich and have the media flair.");
 			dialogue.Enqueue("I think I should get all the credit for discovering Troy, and keep all the treasure.");
@@ -97,21 +99,22 @@ public class DialogueTroy : MonoBehaviour {
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 			counter++; // jetzt 7
 		} else if (nameofobj == "dynamite"){
+			FindObjectOfType<ObjToggleTroy>().ActivateDynamiteA();
 			QuestionDialogue.Instance.ShowQuestion("A: Perhaps we can go more slowly, digging each level carefully in order to  preserve as much material as possible.  \n \n B: Use dynamite to reach the correct level as quickly and efficiently as possible. \n \n C: The stratigraphic levels are often not so clear. You can probably excavate two-three levels at once without much issue,  and we can always go back if something looks particularly interesting.",
 			 () => {Debug.Log("0 Punkte");
-			 		FindObjectOfType<SoundEffects>().playWrong();
+					FindObjectOfType<SoundEffects>().playWrong();
 					dialogue.Clear();
 					dialogue.Enqueue("Don't be so hesitant. That way you won't become a great archaeologist like me.");
 					dialogue.Enqueue("Just listen to me, I know my stuff.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("10 Punkte");
-			 		ScoreManager.instance.AddScore(10);
+					ScoreManager.instance.AddScore(10);
 					FindObjectOfType<SoundEffects>().playRight();
 					dialogue.Clear();
 					dialogue.Enqueue("That's what I call effectiveness!");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("5 Punkte");
-			 		ScoreManager.instance.AddScore(5);
+					ScoreManager.instance.AddScore(5);
 					FindObjectOfType<SoundEffects>().playRight();
 					dialogue.Clear();
 					dialogue.Enqueue("Don't be so hesitant. That way you won't become a great archaeologist like me.");
@@ -125,6 +128,7 @@ public class DialogueTroy : MonoBehaviour {
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 			counter++; //jetzt 8
 		} else if (nameofobj == "shard"){
+			FindObjectOfType<ObjToggleTroy>().ActivateShardA();
 			dialogue.Clear();
 			dialogue.Enqueue("These sherds look very lame, I don’t think we should keep them.");
 			dialogue.Enqueue("Do you agree, [Player]?");
@@ -137,6 +141,7 @@ public class DialogueTroy : MonoBehaviour {
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 			counter++; //jetzt 10
 		} else if (nameofobj == "diadem"){
+			FindObjectOfType<ObjToggleTroy>().ActivateDiademA();
 			FindObjectOfType<ObjToggleTroy>().SwapSchliemann();
 			dialogue.Clear();
 			dialogue.Enqueue("Ah, thank you!");
@@ -168,24 +173,25 @@ public class DialogueTroy : MonoBehaviour {
 			FindObjectOfType<ObjToggleTroy>().ActivateHomer();
 			counter++; //jetzt 3
 		} else if (nameofobj == "homer" && counter == 3) {
+			FindObjectOfType<ObjToggleTroy>().DeactivateHomerA();
 			FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();
 		} else if (nameofobj == "SchliemannT" && counter == 4) {
 			FindObjectOfType<ObjToggleTroy>().ActivatePlain();
 		} else if (nameofobj == "plain" && counter == 4){
 			QuestionDialogue.Instance.ShowQuestion("A: Νo, We should give full credit to all our colleagues and put the artefacts in a museum for everyone to enjoy. \n \n B: Agreed! We will get more attention and funding that way. One great man making a great discovery! \n \n C: Perhaps we can give Frank  a footnote?",
 			 () => {Debug.Log("0 Punkte");
-			 		FindObjectOfType<SoundEffects>().playWrong();
+					FindObjectOfType<SoundEffects>().playWrong();
 			 		dialogue.Clear();
 					dialogue.Enqueue("Oh, you are too selfless. I will show you how to do it.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("10 Punkte");
-			 		ScoreManager.instance.AddScore(10);
+					ScoreManager.instance.AddScore(10);
 					FindObjectOfType<SoundEffects>().playRight();
 			 		dialogue.Clear();
 					dialogue.Enqueue("I really like how you are starting to think like I do.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("5 Punkte");
-			 		ScoreManager.instance.AddScore(5);
+					ScoreManager.instance.AddScore(5);
 					FindObjectOfType<SoundEffects>().playRight();
 			 		dialogue.Clear();
 					dialogue.Enqueue("Oh, you are too selfless. I will show you how to do it.");
@@ -200,10 +206,12 @@ public class DialogueTroy : MonoBehaviour {
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
 			counter++; //jetzt 6
 		} else if (nameofobj == "plain" && counter == 6){
+			FindObjectOfType<ObjToggleTroy>().DeactivatePlainA();
 			FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();	
 		} else if (nameofobj == "SchliemannT" && counter == 7){
 			FindObjectOfType<ObjToggleTroy>().ActivateDynamite();
 		} else if (nameofobj == "dynamite" && counter == 7){
+			FindObjectOfType<ObjToggleTroy>().DeactivateDynamiteA();
 			FindObjectOfType<SoundEffects>().playExplosion();
 		 	FindObjectOfType<ObjToggleTroy>().DeactivateBackground();
 			FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();
@@ -212,24 +220,25 @@ public class DialogueTroy : MonoBehaviour {
 		} else if (nameofobj == "shard" && counter == 8){
 			QuestionDialogue.Instance.ShowQuestion("A: All information matters, and we should be as detailed in our collection as  possible. It could be useful for another project \n \n B: Keep only the significant ones, like bases, lips, handles or painted sherds which are diagnostic. We can throw the rest away. \n \n C: Yes, lets just throw it out. Who really cares about lamp bowls and scraps. There is way too many anyway.",
 			 () => {Debug.Log("0 Punkte");
-			 		FindObjectOfType<SoundEffects>().playWrong();
+					FindObjectOfType<SoundEffects>().playWrong();
 			 		dialogue.Clear();
 					dialogue.Enqueue("You know what? Put them away anyway, I don't want to see these sherds anymore during this dig.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("5 Punkte");
-			 		ScoreManager.instance.AddScore(5);
+					ScoreManager.instance.AddScore(5);
 					FindObjectOfType<SoundEffects>().playRight();
 			 		dialogue.Clear();
 					dialogue.Enqueue("You know what? Put them away anyway, I don't want to see these sherds anymore during this dig.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);}, 
 			 () => {Debug.Log("10 Punkte");
-			 		ScoreManager.instance.AddScore(10);
+					ScoreManager.instance.AddScore(10);
 					FindObjectOfType<SoundEffects>().playRight();
 			 		dialogue.Clear();
 					dialogue.Enqueue("You're right, we should get rid of the junk, it doesn't look very promising.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
 			counter++; //jetzt 9
 		} else if (nameofobj == "shard" && counter == 9){
+			FindObjectOfType<ObjToggleTroy>().DeactivateShardA();
 			FindObjectOfType<ObjToggleTroy>().ActivateSchliemann();
 		} else if (nameofobj == "SchliemannT" && counter == 10){
 			FindObjectOfType<ObjToggleTroy>().ActivateDiadem();
@@ -260,6 +269,7 @@ public class DialogueTroy : MonoBehaviour {
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
 			counter++; //jetzt 12
 		} else if (nameofobj == "diadem" && counter == 12){
+			FindObjectOfType<ObjToggleTroy>().DeactivateDiademA();
 			QuestionDialogue.Instance.ShowQuestion("A: Continue with Mycenae \n \n B: Quit to Main Menu \n \n C: Quit the Game",
 			 () => {Initiate.Fade("Mycenae", Color.black, 1.0f);}, 
 			 () => {SceneManager.LoadScene(0);}, 

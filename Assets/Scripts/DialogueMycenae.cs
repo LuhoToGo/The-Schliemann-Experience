@@ -54,6 +54,7 @@ public class DialogueMycenae : MonoBehaviour {
 			dialogue.Enqueue("Welcome to Mycenae. Please find me the permit.");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 		} else if (nameofobj == "permission") {
+			FindObjectOfType<ObjToggleMycenae>().ActivatePermissionA();
 			dialogue.Clear();
 			dialogue.Enqueue("So what would you, my dear assistant, start with today?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
@@ -63,6 +64,7 @@ public class DialogueMycenae : MonoBehaviour {
 			dialogue.Enqueue("Where did I put that stupid report book? Can you find it somewhere?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 		} else if (nameofobj == "diary") {
+			FindObjectOfType<ObjToggleMycenae>().ActivateDiaryA();
 			dialogue.Clear();
 			dialogue.Enqueue("You’re asking me, if you should finish the reports? Gmpff decide yourself!");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
@@ -72,6 +74,7 @@ public class DialogueMycenae : MonoBehaviour {
 			dialogue.Enqueue("Great, so many nice findings here. There was this one pot, I liked specifically…");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 		} else if (nameofobj == "pottery") {
+			FindObjectOfType<ObjToggleMycenae>().ActivatePotteryA();
 			dialogue.Clear();
 			dialogue.Enqueue("Thank you. You are a very good assistant.");
 			dialogue.Enqueue("I’ll challenge you to another question, even though the answer is pretty obvious to me.");
@@ -83,6 +86,7 @@ public class DialogueMycenae : MonoBehaviour {
 			dialogue.Enqueue("What shimmers so beautifully golden? Bring it to me!");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 		} else if (nameofobj == "mask") {
+			FindObjectOfType<ObjToggleMycenae>().ActivateMaskA();
 			dialogue.Clear();
 			dialogue.Enqueue("We finally found the mask! What do you think of it?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
@@ -93,6 +97,7 @@ public class DialogueMycenae : MonoBehaviour {
 			dialogue.Enqueue("We should mark the end of the excavation in Mycenae in 1876.");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 		} else if (nameofobj == "EoE") {
+			FindObjectOfType<ObjToggleMycenae>().ActivateEoeA();
 			dialogue.Clear();
 			dialogue.Enqueue("Can you think of my main reason to end this excavation here, today?");
 			dialogue.Enqueue("Think like I do one more time!");
@@ -128,6 +133,7 @@ public class DialogueMycenae : MonoBehaviour {
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
 			counter++; //jetzt 2
 		}  else if (nameofobj == "permission" && counter == 2) {
+			FindObjectOfType<ObjToggleMycenae>().DeactivatePermissionA();
 			FindObjectOfType<ObjToggleMycenae>().ActivateSchliemann();
 		}  else if (nameofobj == "SchliemannM" && counter == 2) {
 			FindObjectOfType<ObjToggleMycenae>().ActivateDiary();
@@ -162,6 +168,7 @@ public class DialogueMycenae : MonoBehaviour {
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
 			counter++; //jetzt 5
 		} else if (nameofobj == "diary" && counter == 5) {
+			FindObjectOfType<ObjToggleMycenae>().DeactivateDiaryA();
 			FindObjectOfType<ObjToggleMycenae>().ActivateSchliemann();
 		} else if (nameofobj == "SchliemannM" && counter == 5) {
 			FindObjectOfType<ObjToggleMycenae>().ActivatePottery();
@@ -187,6 +194,7 @@ public class DialogueMycenae : MonoBehaviour {
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
 			counter++; //jetzt 7
 		} else if (nameofobj == "pottery" && counter ==  7) {
+			FindObjectOfType<ObjToggleMycenae>().DeactivatePotteryA();
 			FindObjectOfType<ObjToggleMycenae>().ActivateSchliemann();
 		} else if (nameofobj == "SchliemannM" && counter == 7) {
 			FindObjectOfType<ObjToggleMycenae>().ActivateMask();
@@ -219,6 +227,7 @@ public class DialogueMycenae : MonoBehaviour {
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
 			counter++; //jetzt 10
 		} else if (nameofobj == "mask" && counter == 10) {
+			FindObjectOfType<ObjToggleMycenae>().DeactivateMaskA();
 			FindObjectOfType<ObjToggleMycenae>().ActivateSchliemann();
 		} else if (nameofobj == "SchliemannM" && counter == 10) {
 			FindObjectOfType<ObjToggleMycenae>().ActivateEoe();
@@ -243,6 +252,7 @@ public class DialogueMycenae : MonoBehaviour {
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
 			counter++; //jetzt 11
 		} else if (nameofobj == "EoE" && counter == 11) {
+			FindObjectOfType<ObjToggleMycenae>().DeactivateEoeA();
 			Initiate.Fade("Epilogue", Color.black, 1.0f); 
 		} else {
 			Debug.Log("Keine Reaktion hinterlegt");

@@ -9,8 +9,7 @@ using UnityEngine;
 //templateS: FindObjectOfType<ObjToggleTroy>().DeactivateSchliemann();
 
 
-//Das ist wahnsinnig unschoen, aber funktioniert erstmal. Ich glaub ich hab Migraene.
-//Toggle ueber einen Bool zu machen ist aber hier auch nicht viel schoener.
+
 public class ObjToggleTroy : MonoBehaviour
 {
     //Gameplay Objects
@@ -89,11 +88,13 @@ public class ObjToggleTroy : MonoBehaviour
     }
 
     public void ActivateDiademA(){
+
         diademAn.SetBool("IsOpen", true);
     }
 
     public void DeactivateDiademA(){
         diademAn.SetBool("IsOpen", false);
+
     }
 
     public void ActivatePlain(){
@@ -105,11 +106,13 @@ public class ObjToggleTroy : MonoBehaviour
     }
 
     public void ActivatePlainA(){
+
         plainAn.SetBool("IsOpen", true);
     }
 
     public void DeactivatePlainA(){
         plainAn.SetBool("IsOpen", false);
+
     }
 
     public void ActivateDynamite(){
@@ -121,10 +124,12 @@ public class ObjToggleTroy : MonoBehaviour
     }
 
     public void ActivateDynamiteA(){
+
         dynamiteAn.SetBool("IsOpen", true);
     }
 
     public void DeactivateDynamiteA(){
         dynamiteAn.SetBool("IsOpen", false);
+
     }
 }
