@@ -24,13 +24,12 @@ public class ObjToggleTroy : MonoBehaviour
     public GameObject background;
 
     //Artwork Showcase Objects
+    public GameObject dynamiteA;
     public Animator homerAn;
     public Animator shardAn;
-    public GameObject homerA; 
-    public GameObject shardA; 
-    public GameObject diademA; 
-    public GameObject plainA; 
-    public GameObject dynamiteA; 
+    public Animator diademAn; 
+    public Animator plainAn; 
+    public Animator dynamiteAn; 
 
     
     public void ActivateSchliemann(){
@@ -48,11 +47,7 @@ public class ObjToggleTroy : MonoBehaviour
 
     public void DeactivateBackground(){
         background.SetActive(false);
-    }
-    
-    public void ActivateHomer(){
-        homer.GetComponent<BoxCollider2D>().enabled = true;
-    }
+    } 
 
     public void DeactivateHomer(){
         homer.GetComponent<BoxCollider2D>().enabled = false;
@@ -69,7 +64,7 @@ public class ObjToggleTroy : MonoBehaviour
     public void ActivateShard(){
         shard.GetComponent<BoxCollider2D>().enabled = true;
     }
-
+    
     public void DeactivateShard(){
         shard.GetComponent<BoxCollider2D>().enabled = false;
     }
@@ -85,21 +80,17 @@ public class ObjToggleTroy : MonoBehaviour
     public void ActivateDiadem(){
         diadem.GetComponent<BoxCollider2D>().enabled = true;
     }
-
+    
     public void DeactivateDiadem(){
         diadem.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     public void ActivateDiademA(){
-        diademA.SetActive(true);
+        diademAn.SetBool("IsOpen", true);
     }
 
     public void DeactivateDiademA(){
-        diademA.SetActive(false);
-    }
-
-    public void ActivatePlain(){
-        plain.GetComponent<BoxCollider2D>().enabled = true;
+        diademAn.SetBool("IsOpen", false);
     }
 
     public void DeactivatePlain(){
@@ -107,15 +98,11 @@ public class ObjToggleTroy : MonoBehaviour
     }
 
     public void ActivatePlainA(){
-        plainA.SetActive(true);
+        plainAn.SetBool("IsOpen", true);
     }
 
     public void DeactivatePlainA(){
-        plainA.SetActive(false);
-    }
-
-    public void ActivateDynamite(){
-        dynamite.GetComponent<BoxCollider2D>().enabled = true;
+        plainAn.SetBool("IsOpen", false);
     }
 
     public void DeactivateDynamite(){
@@ -123,10 +110,11 @@ public class ObjToggleTroy : MonoBehaviour
     }
 
     public void ActivateDynamiteA(){
-        dynamiteA.SetActive(true);
+        dynamiteAn.SetBool("IsOpen", true);
     }
 
     public void DeactivateDynamiteA(){
         dynamiteA.SetActive(false);
+        //Explosion Animation hier
     }
 }
