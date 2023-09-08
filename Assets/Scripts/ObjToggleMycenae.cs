@@ -8,10 +8,10 @@ using UnityEngine;
 //templateS: FindObjectOfType<ObjToggleMycenae>().ActivateSchliemann();
 //templateS: FindObjectOfType<ObjToggleMycenae>().DeactivateSchliemann();
 
-
-//Das ist wahnsinnig unschoen, aber funktioniert erstmal. Ich glaub ich hab Migraene.
 public class ObjToggleMycenae : MonoBehaviour
 {
+    
+    //Gameplay Objects
     public GameObject mask; 
     public GameObject diary; 
     public GameObject pottery; 
@@ -19,14 +19,6 @@ public class ObjToggleMycenae : MonoBehaviour
     public GameObject eoe; 
     public GameObject schliemann;
 
-<<<<<<< Updated upstream
-    //private Color maskColor;
-    //private Color diaryColor;
-    //private Color potteryColor;
-    //private Color permissionColor;
-    //private Color eoeColor;
-    
-=======
 
     //Artwork Showcase Objects
     public Animator maskAn;
@@ -36,7 +28,6 @@ public class ObjToggleMycenae : MonoBehaviour
     public Animator eoeAn;
 
 
->>>>>>> Stashed changes
     public void ActivateSchliemann(){
         schliemann.GetComponent<BoxCollider2D>().enabled = true;
     }
@@ -47,15 +38,10 @@ public class ObjToggleMycenae : MonoBehaviour
     
     public void ActivateMask(){
         mask.GetComponent<BoxCollider2D>().enabled = true;
-        //mask.GetComponent<Renderer>().material.color = maskColor;
     }
 
     public void DeactivateMask(){
         mask.GetComponent<BoxCollider2D>().enabled = false;
-<<<<<<< Updated upstream
-        //maskColor = mask.GetComponent<Renderer>().material.color;
-    	//mask.GetComponent<Renderer>().material.color = Color.grey;
-=======
     }
 
     public void ActivateMaskA(){
@@ -64,20 +50,14 @@ public class ObjToggleMycenae : MonoBehaviour
 
     public void DeactivateMaskA(){
         maskAn.SetBool("IsOpen", false);
->>>>>>> Stashed changes
     }
 
     public void ActivateDiary(){
         diary.GetComponent<BoxCollider2D>().enabled = true;
-        //diary.GetComponent<Renderer>().material.color = diaryColor;
     }
 
     public void DeactivateDiary(){
         diary.GetComponent<BoxCollider2D>().enabled = false;
-<<<<<<< Updated upstream
-        //diaryColor = diary.GetComponent<Renderer>().material.color;
-    	//diary.GetComponent<Renderer>().material.color = Color.grey;
-=======
     }
 
     public void ActivateDiaryA(){
@@ -86,20 +66,14 @@ public class ObjToggleMycenae : MonoBehaviour
 
     public void DeactivateDiaryA(){
         diaryAn.SetBool("IsOpen", false);
->>>>>>> Stashed changes
     }
 
     public void ActivatePottery(){
         pottery.GetComponent<BoxCollider2D>().enabled = true;
-        //pottery.GetComponent<Renderer>().material.color = potteryColor;
     }
 
     public void DeactivatePottery(){
         pottery.GetComponent<BoxCollider2D>().enabled = false;
-<<<<<<< Updated upstream
-        //potteryColor = pottery.GetComponent<Renderer>().material.color;
-    	//pottery.GetComponent<Renderer>().material.color = Color.grey;
-=======
     }
 
     public void ActivatePotteryA(){
@@ -108,20 +82,14 @@ public class ObjToggleMycenae : MonoBehaviour
 
     public void DeactivatePotteryA(){
         potteryAn.SetBool("IsOpen", false);
->>>>>>> Stashed changes
     }
 
     public void ActivatePermission(){
         permission.GetComponent<BoxCollider2D>().enabled = true;
-        //permission.GetComponent<Renderer>().material.color = permissionColor;
     }
 
     public void DeactivatePermission(){
         permission.GetComponent<BoxCollider2D>().enabled = false;
-<<<<<<< Updated upstream
-        //permissionColor = permission.GetComponent<Renderer>().material.color;
-    	//permission.GetComponent<Renderer>().material.color = Color.grey;
-=======
     }
 
     public void ActivatePermissionA(){
@@ -130,20 +98,14 @@ public class ObjToggleMycenae : MonoBehaviour
 
     public void DeactivatePermissionA(){
         permissionAn.SetBool("IsOpen", false);
->>>>>>> Stashed changes
     }
 
     public void ActivateEoe(){
         eoe.GetComponent<BoxCollider2D>().enabled = true;
-        //eoe.GetComponent<Renderer>().material.color = eoeColor;
     }
 
     public void DeactivateEoe(){
         eoe.GetComponent<BoxCollider2D>().enabled = false;
-<<<<<<< Updated upstream
-        //eoeColor = eoe.GetComponent<Renderer>().material.color;
-    	//eoe.GetComponent<Renderer>().material.color = Color.grey;
-=======
     }
 
     public void ActivateEoeA(){
@@ -152,6 +114,5 @@ public class ObjToggleMycenae : MonoBehaviour
 
     public void DeactivateEoeA(){
         eoeAn.SetBool("IsOpen", false);
->>>>>>> Stashed changes
     }
 }
