@@ -59,23 +59,23 @@ public class DialogueMycenae : MonoBehaviour {
 			dialogue.Clear();
 			dialogue.Enqueue("So what would you, my dear assistant, start with today?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-		} else if (nameofobj == "SchliemannM" && counter == 2) {
+		} else if (nameofobj == "SchliemannM" && counter == 4) {
 			FindObjectOfType<ObjToggleMycenae>().DeactivateSchliemann();
 			dialogue.Clear();
 			dialogue.Enqueue("Where did I put that stupid report book? Can you find it somewhere?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-		} else if (nameofobj == "diary" && counter == 3) {
+		} else if (nameofobj == "diary" && counter == 5) {
 			gameObject.SetActive(false);
 			FindObjectOfType<ObjToggleMycenae>().ActivateDiaryA();
 			dialogue.Clear();
 			dialogue.Enqueue("You’re asking me, if you should finish the reports? Gmpff decide yourself!");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-		} else if (nameofobj == "SchliemannM" && counter == 5) {
+		} else if (nameofobj == "SchliemannM" && counter == 8) {
 			FindObjectOfType<ObjToggleMycenae>().DeactivateSchliemann();
 			dialogue.Clear();
 			dialogue.Enqueue("Great, so many nice findings here. There was this one pot, I liked specifically…");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-		} else if (nameofobj == "pottery" && counter == 6) {
+		} else if (nameofobj == "pottery" && counter == 9) {
 			gameObject.SetActive(false);
 			FindObjectOfType<ObjToggleMycenae>().ActivatePotteryA();
 			dialogue.Clear();
@@ -83,24 +83,25 @@ public class DialogueMycenae : MonoBehaviour {
 			dialogue.Enqueue("I’ll challenge you to another question, even though the answer is pretty obvious to me.");
 			dialogue.Enqueue("Let’s see: Would you say the findings are the most important goal of an excavation?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-		} else if (nameofobj == "SchliemannM" && counter == 7) {
+		} else if (nameofobj == "SchliemannM" && counter == 11) {
 			FindObjectOfType<ObjToggleMycenae>().DeactivateSchliemann();
 			dialogue.Clear();
 			dialogue.Enqueue("What shimmers so beautifully golden? Bring it to me!");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-		} else if (nameofobj == "mask" && counter == 8) {
+		} else if (nameofobj == "mask" && counter == 12) {
 			gameObject.SetActive(false);
 			FindObjectOfType<ObjToggleMycenae>().ActivateMaskA();
 			dialogue.Clear();
 			dialogue.Enqueue("We finally found the mask! What do you think of it?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-		} else if (nameofobj == "SchliemannM" && counter == 10) {
+		} else if (nameofobj == "SchliemannM" && counter == 14) {
 			FindObjectOfType<ObjToggleMycenae>().DeactivateSchliemann();
 			dialogue.Clear();
 			dialogue.Enqueue("This was a very exhausting time for me.");
 			dialogue.Enqueue("We should mark the end of the excavation in Mycenae in 1876.");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-		} else if (nameofobj == "EoE" && counter == 10) {
+			counter++; //jetzt 15
+		} else if (nameofobj == "EoE" && counter == 15) {
 			gameObject.SetActive(false);
 			FindObjectOfType<ObjToggleMycenae>().ActivateEoeA();
 			dialogue.Clear();
@@ -140,11 +141,18 @@ public class DialogueMycenae : MonoBehaviour {
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
 			counter++; //jetzt 2
 		}  else if (nameofobj == "permission" && counter == 2) {
+			dialogue.Clear();
+			dialogue.Enqueue("Εxcavations must always start after the relevant permission of the responsible authorities.");
+			dialogue.Enqueue("Usually archaeologists must be careful and well informed about what is allowed and what is not, as well as that each country has its own legal framework.");
+			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
+			counter++; //jetzt 3
+		}  else if (nameofobj == "permission" && counter == 3) {
 			FindObjectOfType<ObjToggleMycenae>().DeactivatePermissionA();
 			FindObjectOfType<ObjToggleMycenae>().ActivateSchliemann();
-		}  else if (nameofobj == "SchliemannM" && counter == 2) {
-			counter++; //jetzt 3
-		} else if (nameofobj == "diary" && counter == 3) {
+			counter++; //jetzt 4
+		} else if (nameofobj == "SchliemannM" && counter == 4) {
+			counter++; //jetzt 5
+		} else if (nameofobj == "diary" && counter == 5) {
 			QuestionDialogue.Instance.ShowQuestion("A: I’ll just put some imagination on it, so I won’t loose precious time. \n \n B: I was always taught that, ‘All information matters’, so I’ll write them as detailed as possible. \n \n C: Maybe the details are not necessary, I’ll just write a basic report.",
 			 () => {Debug.Log("10 Punkte");
 			 		ScoreManager.instance.AddScore(10);
@@ -163,8 +171,8 @@ public class DialogueMycenae : MonoBehaviour {
 			 		dialogue.Clear();
 					dialogue.Enqueue("Hmm… And I still tell you, nobody wants to read these overly detailed reports.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
-			counter++; //jetzt 4
-		} else if (nameofobj == "diary" && counter == 4) {
+			counter++; //jetzt 6
+		} else if (nameofobj == "diary" && counter == 6) {
 			dialogue.Clear();
 			dialogue.Enqueue("Excavation is a destructive method and cannot be repeated. ");
 			dialogue.Enqueue("So, it is important to write in the field or archaeological diary all the procedures followed during the excavation.");
@@ -172,13 +180,14 @@ public class DialogueMycenae : MonoBehaviour {
 			dialogue.Enqueue("However it is important to strike that balance between detail and time.");
 			dialogue.Enqueue("On an excavation it would be entirely at your discretion.");
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
-			counter++; //jetzt 5
-		} else if (nameofobj == "diary" && counter == 5) {
+			counter++; //jetzt 7
+		} else if (nameofobj == "diary" && counter == 7) {
 			FindObjectOfType<ObjToggleMycenae>().DeactivateDiaryA();
 			FindObjectOfType<ObjToggleMycenae>().ActivateSchliemann();
-		} else if (nameofobj == "SchliemannM" && counter == 5) {
-			counter++; //jetzt 6
-		} else if (nameofobj == "pottery" && counter ==  6) {
+			counter++; //jetzt 8
+		} else if (nameofobj == "SchliemannM" && counter == 8) {
+			counter++; //jetzt 9
+		} else if (nameofobj == "pottery" && counter ==  9) {
 			QuestionDialogue.Instance.ShowQuestion("A: Νo, the findings alone is not the goal. The archaeological context matters. \n \n B: Historical and cultural significance through careful analysis matter more. \n \n C: Absolutely! Give money to the workers. Faster work - more findings",
 			 () => {Debug.Log("5 Punkte");
 			 		ScoreManager.instance.AddScore(5);
@@ -197,13 +206,20 @@ public class DialogueMycenae : MonoBehaviour {
 			 		dialogue.Clear();
 					dialogue.Enqueue("Yes, yes, YES!");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
-			counter++; //jetzt 7
-		} else if (nameofobj == "pottery" && counter ==  7) {
+			counter++; //jetzt 10
+		} else if (nameofobj == "pottery" && counter ==  10) {
+			dialogue.Clear();
+			dialogue.Enqueue("Τhe findings of an excavation are quite important, however, without the archaeological context-");
+			dialogue.Enqueue("where they were found (coordinates, stratigraphy) are simple findings.");
+			dialogue.Enqueue("Only their examination as part of a whole can help in the understanding of the past.");
+			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
+			counter++; //jetzt 11
+		} else if (nameofobj == "pottery" && counter ==  11) {
 			FindObjectOfType<ObjToggleMycenae>().DeactivatePotteryA();
 			FindObjectOfType<ObjToggleMycenae>().ActivateSchliemann();
-		} else if (nameofobj == "SchliemannM" && counter == 7) {
-			counter++; //jetzt 8
-		} else if (nameofobj == "mask" && counter == 8) {
+		} else if (nameofobj == "SchliemannM" && counter == 11) {
+			counter++; //jetzt 12
+		} else if (nameofobj == "mask" && counter == 12) {
 			QuestionDialogue.Instance.ShowQuestion("A: The examination of the context will give us the chronology. \n \n B: It’s definitely Agamemnon’s death mask! \n \n C: Some examination of the gold can give us an accurate chronology.",
 			 () => {Debug.Log("0 Punkte");
 			 		FindObjectOfType<SoundEffects>().playWrong();
@@ -222,18 +238,18 @@ public class DialogueMycenae : MonoBehaviour {
 			 		dialogue.Clear();
 					dialogue.Enqueue("Accuracy, chronology, reliability, all these words ending on ‘y’ are my least favorite…");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
-			counter++; //jetzt 9
-		} else if (nameofobj == "mask" && counter == 9) {
+			counter++; //jetzt 13
+		} else if (nameofobj == "mask" && counter == 13) {
 			dialogue.Clear();
 			dialogue.Enqueue("Schliemann argued that the mask belonged to Agamemnon, the mythical king of Mycenae who lived in the 12th century BC.");
 			dialogue.Enqueue("However, some scholars argue that the mask may be a later forgery or a replica rather than an original artifact from the time of Agamemnon.");
 			dialogue.Enqueue("The test of the gold may provide the answer!");
 			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
-			counter++; //jetzt 10
-		} else if (nameofobj == "mask" && counter == 10) {
+			counter++; //jetzt 14
+		} else if (nameofobj == "mask" && counter == 14) {
 			FindObjectOfType<ObjToggleMycenae>().DeactivateMaskA();
 			FindObjectOfType<ObjToggleMycenae>().ActivateSchliemann();
-		} else if (nameofobj == "EoE" && counter == 10) {
+		} else if (nameofobj == "EoE" && counter == 15) {
 			QuestionDialogue.Instance.ShowQuestion("A: We have Agamemnon’s treasures, we have nothing more to discover. \n \n B: We don’t have enough money to continue. \n \n C: Our work is done, all the archaeological remains have been documented. Next step, their examination.",
 			 () => {Debug.Log("10 Punkte");
 			 		ScoreManager.instance.AddScore(10);
@@ -252,8 +268,16 @@ public class DialogueMycenae : MonoBehaviour {
 			 		dialogue.Clear();
 					dialogue.Enqueue("Yeah yeah, Let's pack up our stuff and get out of here.");
 					FindObjectOfType<DialogueManager>().StartDialogue(dialogue);});
-			counter++; //jetzt 11
-		} else if (nameofobj == "EoE" && counter == 11) {
+			counter++; //jetzt 16
+		} else if (nameofobj == "EoE" && counter == 16) {
+			dialogue.Clear();
+			dialogue.Enqueue("Excavations are usually permitted for a certain period of time.");
+			dialogue.Enqueue("The finding of important objects, or objects that archaeologists consider important, is not a factor affecting the end of the excavation.");
+			dialogue.Enqueue("An important factor is the good and detailed documentation of all findings.");
+			dialogue.Enqueue("However, we must bear in mind that the archaeological sector often suffers from insufficient funding or pressure from construction companies to complete excavations more quickly.");
+			FindObjectOfType<DialogueManager>().StartDialogueAssistant(dialogue);
+			counter++; //jetzt 17
+		} else if (nameofobj == "EoE" && counter == 17) {
 			FindObjectOfType<ObjToggleMycenae>().DeactivateEoeA();
 			Initiate.Fade("Epilogue", Color.black, 1.0f); 
 		} else {
