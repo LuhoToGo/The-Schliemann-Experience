@@ -24,6 +24,7 @@ public class ObjToggleTroy : MonoBehaviour
     public GameObject background;
 
     //Artwork Showcase Objects
+    public GameObject explosion;
     public GameObject dynamiteA;
     public Animator homerAn;
     public Animator shardAn;
@@ -115,6 +116,11 @@ public class ObjToggleTroy : MonoBehaviour
 
     public void DeactivateDynamiteA(){
         dynamiteA.SetActive(false);
-        //Explosion Animation hier
+        explosion.SetActive(true);
+        Invoke("DeactivateExplosion",1);
+    }
+
+    public void DeactivateExplosion(){
+        explosion.SetActive(false);
     }
 }
