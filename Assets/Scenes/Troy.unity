@@ -608,8 +608,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45112bad273cd5e409d0cf0776e89a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTexture1: {fileID: 0}
-  cursorTexture2: {fileID: 0}
+  cursorTexture1: {fileID: 2800000, guid: b48bb2e67f639734db8b960c9cfdcd65, type: 3}
+  cursorTexture2: {fileID: 2800000, guid: 4c18cd28ae4896045945aefbee5fad0f, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
 --- !u!61 &68761290
@@ -981,8 +981,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45112bad273cd5e409d0cf0776e89a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTexture1: {fileID: 0}
-  cursorTexture2: {fileID: 0}
+  cursorTexture1: {fileID: 2800000, guid: b48bb2e67f639734db8b960c9cfdcd65, type: 3}
+  cursorTexture2: {fileID: 2800000, guid: 4c18cd28ae4896045945aefbee5fad0f, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
 --- !u!61 &177458822
@@ -2186,8 +2186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45112bad273cd5e409d0cf0776e89a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTexture1: {fileID: 0}
-  cursorTexture2: {fileID: 0}
+  cursorTexture1: {fileID: 2800000, guid: b48bb2e67f639734db8b960c9cfdcd65, type: 3}
+  cursorTexture2: {fileID: 2800000, guid: 4c18cd28ae4896045945aefbee5fad0f, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
 --- !u!61 &561063029
@@ -3849,8 +3849,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45112bad273cd5e409d0cf0776e89a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTexture1: {fileID: 0}
-  cursorTexture2: {fileID: 0}
+  cursorTexture1: {fileID: 2800000, guid: b48bb2e67f639734db8b960c9cfdcd65, type: 3}
+  cursorTexture2: {fileID: 2800000, guid: 4c18cd28ae4896045945aefbee5fad0f, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
 --- !u!61 &1308522249
@@ -4177,8 +4177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45112bad273cd5e409d0cf0776e89a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTexture1: {fileID: 0}
-  cursorTexture2: {fileID: 0}
+  cursorTexture1: {fileID: 2800000, guid: b48bb2e67f639734db8b960c9cfdcd65, type: 3}
+  cursorTexture2: {fileID: 2800000, guid: 4c18cd28ae4896045945aefbee5fad0f, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
 --- !u!61 &1408239598
@@ -5365,8 +5365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45112bad273cd5e409d0cf0776e89a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTexture1: {fileID: 0}
-  cursorTexture2: {fileID: 0}
+  cursorTexture1: {fileID: 2800000, guid: b48bb2e67f639734db8b960c9cfdcd65, type: 3}
+  cursorTexture2: {fileID: 2800000, guid: 4c18cd28ae4896045945aefbee5fad0f, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
 --- !u!61 &2091638627
