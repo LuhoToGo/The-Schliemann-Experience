@@ -109,9 +109,20 @@ public class DialogueMycenae : MonoBehaviour {
 			dialogue.Enqueue("Think like I do one more time!");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 		} else {
-			Debug.Log("Das ist nicht der richtige Gegenstand...");
+			Debug.Log("Das war der falsche Gegenstand");
+			float randomNumber = Random.Range(0, 5);
 			dialogue.Clear();
-			dialogue.Enqueue("That is not what i asked you to find for me!");
+			if (randomNumber == 1){
+				dialogue.Enqueue("That is not what i asked you to find for me!");
+			} else if (randomNumber == 2){
+				dialogue.Enqueue("What are you clicking on? Stop it!");
+			} else if (randomNumber == 3){
+				dialogue.Enqueue("Maybe you should try clicking me instead!");
+			} else if (randomNumber == 4){
+				dialogue.Enqueue("Hey! I am more important than clicking on that thing!");
+			} else {
+				dialogue.Enqueue("What are you doing? Click on me instead!");
+			}
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 		}	
 	}

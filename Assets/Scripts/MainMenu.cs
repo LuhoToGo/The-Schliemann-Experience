@@ -16,4 +16,13 @@ public class MainMenu : MonoBehaviour
     public void QuitGame(){
         Application.Quit();
     }
+
+    public void ToggleScreenMode(){
+        if(Screen.fullScreenMode == FullScreenMode.Windowed){
+            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+        }
+        else {
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+        } 
+    }
 }

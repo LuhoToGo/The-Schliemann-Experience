@@ -6,7 +6,7 @@ public class Epilogue : MonoBehaviour
 {
     public Queue<string> text;
     public GameObject scoreSlider;
-    public int delay = 2;  // Verzoegerungszeit (in Sekunden) nach dem ersten Text, bevor die Punkteleiste mit dem zugehoerigen Text angezeigt werden
+    public int delay = 1;  // Verzoegerungszeit (in Sekunden) nach dem ersten Text, bevor die Punkteleiste mit dem zugehoerigen Text angezeigt werden
 
     void Start() {
         ScoreManager.instance.FindScoreSlider(); // Richtige Referenz zum Slider wird gesucht

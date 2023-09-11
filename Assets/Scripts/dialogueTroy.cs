@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
-//testkommentar
 public class DialogueTroy : MonoBehaviour {
 
 	public static string nameofobj;
@@ -20,8 +19,6 @@ public class DialogueTroy : MonoBehaviour {
 		ScoreManager.instance.FindScoreSlider(); // Richtige Referenz zum Slider wird gesucht
 		ScoreManager.instance.ResetScore(); // Punktestand wird zurueckgesetzt
 		dialogue = new Queue<string>();
-		FindObjectOfType<ObjToggleTroy>().DeactivateShard();
-		FindObjectOfType<ObjToggleTroy>().DeactivateDiadem();
 	}
 	
 	void OnMouseDown() {
@@ -156,9 +153,20 @@ public class DialogueTroy : MonoBehaviour {
 			dialogue.Enqueue("The findings, especially the very fancy gold ones, are the most important goal of the excavation. Correct?");
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 		} else {
-			Debug.Log("Das ist nicht der richtige Gegenstand...");
+			Debug.Log("Das war der falsche Gegenstand");
+			float randomNumber = Random.Range(0, 5);
 			dialogue.Clear();
-			dialogue.Enqueue("That is not what i asked you to find for me!");
+			if (randomNumber == 1){
+				dialogue.Enqueue("That is not what i asked you to find for me!");
+			} else if (randomNumber == 2){
+				dialogue.Enqueue("What are you clicking on? Stop it!");
+			} else if (randomNumber == 3){
+				dialogue.Enqueue("Maybe you should try clicking me instead!");
+			} else if (randomNumber == 4){
+				dialogue.Enqueue("Hey! I am more important than clicking on that thing!");
+			} else {
+				dialogue.Enqueue("What are you doing? Click on me instead!");
+			}
 			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 		}	
 	}
