@@ -123,4 +123,20 @@ public class ObjToggleTroy : MonoBehaviour
     public void DeactivateExplosion(){
         explosion.SetActive(false);
     }
+
+    public void DeactivateTroyObj(){
+        DeactivateHomer();
+        DeactivatePlain();
+        DeactivateDynamite();
+        DeactivateDiadem();
+        DeactivateShard();
+    }
+
+    public void ActivateTroyObj(){
+        homer.GetComponent<BoxCollider2D>().enabled = true;
+        plain.GetComponent<BoxCollider2D>().enabled = true;
+        dynamite.GetComponent<BoxCollider2D>().enabled = true;
+        diadem.GetComponent<BoxCollider2D>().enabled = true;
+        shard.GetComponent<BoxCollider2D>().enabled = true;
+    }
 }

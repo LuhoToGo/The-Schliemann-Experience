@@ -32,6 +32,11 @@ public class DialogueManager : MonoBehaviour
         assistant = false;
         temp = sentences.Count;
         DisplayNextSentence();
+        if (sceneName == "Troy"){
+            FindObjectOfType<ObjToggleTroy>().DeactivateTroyObj();
+        } else if (sceneName == "mycenae"){
+            FindObjectOfType<ObjToggleMycenae>().DeactivateMycenaeObj();
+        }
     }
 
     public void StartDialogueAssistant (Queue<string> dialogue){
@@ -40,6 +45,11 @@ public class DialogueManager : MonoBehaviour
         assistant = true;
         temp = sentences.Count;
         DisplayNextSentence();
+        if (sceneName == "Troy"){
+            FindObjectOfType<ObjToggleTroy>().DeactivateTroyObj();
+        } else if (sceneName == "mycenae"){
+            FindObjectOfType<ObjToggleMycenae>().DeactivateMycenaeObj();
+        }
     }
 
     public void DisplayNextSentence(){
@@ -87,8 +97,10 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("End of Conversation");
 
         if(sceneName == "Troy"){
+            FindObjectOfType<ObjToggleTroy>().ActivateTroyObj();
             FindObjectOfType<DialogueTroy>().postDialogue();
         } else if (sceneName == "mycenae"){
+            FindObjectOfType<ObjToggleMycenae>().ActivateMycenaeObj();
             FindObjectOfType<DialogueMycenae>().postDialogue();
         } else {
             Debug.Log("Falsche Scene");

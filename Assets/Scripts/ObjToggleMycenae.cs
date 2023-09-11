@@ -95,4 +95,20 @@ public class ObjToggleMycenae : MonoBehaviour
     public void DeactivateEoeA(){
         eoeAn.SetBool("IsOpen", false);
     }
+
+    public void DeactivateMycenaeObj(){
+        DeactivateMask();
+        DeactivateDiary();
+        DeactivatePottery();
+        DeactivatePermission();
+        DeactivateEoe();
+    }
+
+    public void ActivateMycenaeObj(){
+        mask.GetComponent<BoxCollider2D>().enabled = true;
+        diary.GetComponent<BoxCollider2D>().enabled = true;
+        pottery.GetComponent<BoxCollider2D>().enabled = true;
+        permission.GetComponent<BoxCollider2D>().enabled = true;
+        eoe.GetComponent<BoxCollider2D>().enabled = true;
+    }
 }
